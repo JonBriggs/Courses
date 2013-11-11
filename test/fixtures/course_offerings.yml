@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  course_id: 1
+  year_id: 1
+  grade_level_ids: MyString
+
+two:
+  course_id: 1
+  year_id: 1
+  grade_level_ids: MyString

@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  shortname: MyString
+  sisid: MyString
+  department_id: 1
+  term_id: 1
+  graded: false
+  archived: false
+  list_in_catalog: false
+  credits: 1.5
+  us_course: false
+  ms_course: false
+  ls_course: false
+  rotation: MyString
+  previous_course_id: 1
+  next_course_id: 1
+  prereq_ids: MyString
+  type: 
+
+two:
+  name: MyString
+  shortname: MyString
+  sisid: MyString
+  department_id: 1
+  term_id: 1
+  graded: false
+  archived: false
+  list_in_catalog: false
+  credits: 1.5
+  us_course: false
+  ms_course: false
+  ls_course: false
+  rotation: MyString
+  previous_course_id: 1
+  next_course_id: 1
+  prereq_ids: MyString
+  type: 
