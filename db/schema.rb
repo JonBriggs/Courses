@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20131111225240) do
     t.integer  "course_id"
     t.integer  "year_id"
     t.string   "grade_level_ids"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

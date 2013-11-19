@@ -16,6 +16,7 @@ class CreateCourses < ActiveRecord::Migration
       t.string :rotation
       t.integer :previous_course_id
       t.integer :next_course_id
+      t.integer :paired_course_id
       t.string :prereq_ids
       t.string :type
 

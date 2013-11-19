@@ -4,7 +4,7 @@ class CreateCourseOfferings < ActiveRecord::Migration
       t.integer :course_id
       t.integer :year_id
       t.string :grade_level_ids
-
+      t.text :description
       t.timestamps
     end
   end

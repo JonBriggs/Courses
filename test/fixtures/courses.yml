@@ -1,39 +1,2863 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  name: MyString
-  shortname: MyString
-  sisid: MyString
+# Read about fixtures at http: //api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+c1112: 
+  name: Latin American Literature
+  shortname: Latin American Lit
   department_id: 1
   term_id: 1
-  graded: false
-  archived: false
+  graded: 1
+  archived: 0
   list_in_catalog: false
-  credits: 1.5
-  us_course: false
+  credits: 1
+  us_course: true
   ms_course: false
   ls_course: false
-  rotation: MyString
-  previous_course_id: 1
-  next_course_id: 1
-  prereq_ids: MyString
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
   type: 
 
-two:
-  name: MyString
-  shortname: MyString
-  sisid: MyString
+c1113: 
+  name: Ancient Poetry
+  shortname: Ancient Poetry
   department_id: 1
   term_id: 1
-  graded: false
-  archived: false
+  graded: 1
+  archived: 0
   list_in_catalog: false
-  credits: 1.5
-  us_course: false
+  credits: 1
+  us_course: true
   ms_course: false
   ls_course: false
-  rotation: MyString
-  previous_course_id: 1
-  next_course_id: 1
-  prereq_ids: MyString
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
   type: 
+
+c1116: 
+  name: "Medieval Era:  Literary Foundations"
+  shortname: Lit. Foundations
+  department_id: 1
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1127: 
+  name: Shakespeare
+  shortname: Shakespeare
+  department_id: 1
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1128: 
+  name: "Revolutions in Thought:  19th Century British Literature"
+  shortname: 19th British Lit.
+  department_id: 1
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1129: 
+  name: "Modern Perspectives:  Late 19th and Early 20th Century European Literature"
+  shortname: Mod. European Lit.
+  department_id: 1
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1131: 
+  name: Modern Asian Literature and Film
+  shortname: Mod. Asian Lit. & Film
+  department_id: 1
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1134: 
+  name: Middle-Eastern and Middle-Eastern American Literature
+  shortname: Mid-East-Amer. Lit.
+  department_id: 1
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1135: 
+  name: Modern African Literature
+  shortname: African Lit.
+  department_id: 1
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1212: 
+  name: The Historical Formation of Latin American Identity
+  shortname: Lat. Amer. History
+  department_id: 2
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1213: 
+  name: "Pre-History:  Building Blocks of Civilization"
+  shortname: Pre-History
+  department_id: 2
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1216: 
+  name: "Medieval Era:  Europe in Transition"
+  shortname: Medieval History
+  department_id: 2
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1227: 
+  name: "Renaissance:  The Cultural Epicenter"
+  shortname: Renaissance History
+  department_id: 2
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1228: 
+  name: "Revolutions in Thought:  Enlightenment to Industrial Revolution"
+  shortname: Revolutions in Thought
+  department_id: 2
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1229: 
+  name: Modern European History
+  shortname: Mod. European History
+  department_id: 2
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1231: 
+  name: "Modern Asian History:  China and Japan"
+  shortname: Mod. Asian Hist
+  department_id: 2
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1234: 
+  name: The Modern Middle East
+  shortname: History of Middle-East
+  department_id: 2
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1235: 
+  name: Modern African History
+  shortname: Mod. African History
+  department_id: 2
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1300: 
+  name: Algebra 1
+  shortname: Algebra 1
+  department_id: 3
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1401: 
+  name: 9th Biology
+  shortname: 9th Biology
+  department_id: 4
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1500: 
+  name: Spanish 1
+  shortname: Spanish 1
+  department_id: 5
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1501: 
+  name: Spanish 2
+  shortname: Spanish 2
+  department_id: 5
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1502: 
+  name: Spanish 3
+  shortname: Spanish 3
+  department_id: 5
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1503: 
+  name: Spanish 4
+  shortname: Spanish 4
+  department_id: 5
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1611: 
+  name: Stagecraft
+  shortname: Stagecraft
+  department_id: 6
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1612: 
+  name: Acting 1
+  shortname: Acting 1
+  department_id: 6
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1615: 
+  name: Drawing and Painting
+  shortname: Drawing and Painting
+  department_id: 6
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1616: 
+  name: Perspective Drawing
+  shortname: Perspective Drawing
+  department_id: 6
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1618: 
+  name: US Choir
+  shortname: Choir
+  department_id: 6
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1620: 
+  name: Digital Reality 1
+  shortname: Digital Reality 1
+  department_id: 6
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1621: 
+  name: Stagecraft
+  shortname: Stagecraft
+  department_id: 6
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1627: 
+  name: Graphic Design
+  shortname: Graphic Design
+  department_id: 6
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1628: 
+  name: US Choir
+  shortname: Choir
+  department_id: 6
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1631: 
+  name: Stagecraft
+  shortname: Stagecraft
+  department_id: 6
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1633: 
+  name: Mixed Media
+  shortname: Mixed Media
+  department_id: 6
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1634: 
+  name: "Mixed Media:  Art meets Science"
+  shortname: "Mix.Media: Art meets Sci."
+  department_id: 6
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1638: 
+  name: US Choir
+  shortname: Choir
+  department_id: 6
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1710: 
+  name: US P.E.
+  shortname: Upper School P.E.
+  department_id: 7
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1711: 
+  name: P.E. Wellness
+  shortname: P.E. Wellness
+  department_id: 7
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1712: 
+  name: Yoga
+  shortname: Yoga
+  department_id: 7
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1720: 
+  name: US P.E.
+  shortname: Upper School P.E.
+  department_id: 7
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1721: 
+  name: P.E. Wellness
+  shortname: P.E. Wellness
+  department_id: 7
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1722: 
+  name: Yoga
+  shortname: Yoga
+  department_id: 7
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1730: 
+  name: US P.E.
+  shortname: Upper School P.E.
+  department_id: 7
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1731: 
+  name: P.E. Wellness
+  shortname: P.E. Wellness
+  department_id: 7
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1732: 
+  name: Yoga
+  shortname: Yoga
+  department_id: 7
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1814: 
+  name: Creative Writing
+  shortname: "WW:  Creative Writing"
+  department_id: 8
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1823: 
+  name: Physical Meets Digital
+  shortname: Physical-Digital
+  department_id: 8
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1824: 
+  name: Creative Writing
+  shortname: "WW:  Creative Writing"
+  department_id: 8
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1833: 
+  name: Physical Meets Digital
+  shortname: Physical-Digital
+  department_id: 8
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1838: 
+  name: Media Literacy
+  shortname: Media Literacy
+  department_id: 8
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c2300: 
+  name: Geometry
+  shortname: Geometry
+  department_id: 3
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c2301: 
+  name: Accelerated Algebra and Geometry 2
+  shortname: Accel. Alg/Geo 2
+  department_id: 3
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c2400: 
+  name: Chemistry
+  shortname: Chemistry
+  department_id: 4
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c2615: 
+  name: Advanced Drawing and Painting
+  shortname: Adv. Drawing & Painting
+  department_id: 6
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c2616: 
+  name: Instrumental Music Ensemble
+  shortname: Inst. Music
+  department_id: 6
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c2621: 
+  name: Directing
+  shortname: Directing
+  department_id: 6
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c2622: 
+  name: Acting 2
+  shortname: Acting 2
+  department_id: 6
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c2626: 
+  name: Instrumental Music Ensemble
+  shortname: Inst. Music
+  department_id: 6
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c2634: 
+  name: Original Works
+  shortname: Original Works
+  department_id: 6
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c2636: 
+  name: Instrumental Music Ensemble
+  shortname: Inst. Music
+  department_id: 6
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c2812: 
+  name: Introduction to Programming
+  shortname: Intro. Programming
+  department_id: 8
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c2817: 
+  name: "Bearing Witness:  The Documentary Film and Social Action"
+  shortname: Documentary Film
+  department_id: 8
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c3100: 
+  name: American Literature
+  shortname: American Lit.
+  department_id: 1
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c3200: 
+  name: "United States History:  The American Question"
+  shortname: US History
+  department_id: 2
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c3300: 
+  name: Algebra 2
+  shortname: Algebra 2
+  department_id: 3
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c3400: 
+  name: Biology
+  shortname: Biology
+  department_id: 4
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c3818: 
+  name: Commerce
+  shortname: Commerce
+  department_id: 8
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c3819: 
+  name: Web Design from the Ground Up
+  shortname: Web Design
+  department_id: 8
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c3821: 
+  name: "From the Mississippi Delta to the Streets:  American Popular Music and Culture"
+  shortname: Am. Music & Culture
+  department_id: 8
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c3822: 
+  name: The Evolution of Society
+  shortname: Evolution of Society
+  department_id: 8
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c3835: 
+  name: Programming 2
+  shortname: Programming 2
+  department_id: 8
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c3839: 
+  name: Web Design
+  shortname: Web Design
+  department_id: 8
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4114: 
+  name: Postmodern Literature and Theory
+  shortname: Postmodern Theory
+  department_id: 1
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4121: 
+  name: Modernist Literature, Film and Music
+  shortname: Mod. Lit, Film & Music
+  department_id: 1
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4133: 
+  name: Western Fiction and Drama
+  shortname: Western Fiction
+  department_id: 1
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4135: 
+  name: Modern Novel
+  shortname: Modern Novel
+  department_id: 1
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4213: 
+  name: Comparative Government
+  shortname: Comparative Gov.
+  department_id: 2
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4223: 
+  name: "Public Policy:  Race, Class, Gender and the Environment"
+  shortname: Public Policy
+  department_id: 2
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4232: 
+  name: International Relations
+  shortname: Int. Relations
+  department_id: 2
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4234: 
+  name: The Economics of Development
+  shortname: Econ of Development
+  department_id: 2
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4300: 
+  name: Pre-Calculus
+  shortname: Pre-Calculus
+  department_id: 3
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4301: 
+  name: Calculus I
+  shortname: Calculus
+  department_id: 3
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4302: 
+  name: Statistics
+  shortname: Statistics
+  department_id: 3
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4303: 
+  name: Advanced Calculus
+  shortname: Adv. Calculus
+  department_id: 3
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4405: 
+  name: Advanced Biology
+  shortname: Adv. Biology
+  department_id: 4
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4409: 
+  name: Advanced Physics Tutorial
+  shortname: Advanced Physics
+  department_id: 4
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4500: 
+  name: Advanced Spanish Language
+  shortname: Adv. Spanish Lang
+  department_id: 5
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4501: 
+  name: Advanced Spanish Literature
+  shortname: Adv. Spanish Lit
+  department_id: 5
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4815: 
+  name: "Thinking:  Happiness"
+  shortname: "Thinking:  Hapiness"
+  department_id: 8
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4824: 
+  name: "Advanced Creative Writing:  Genre Study"
+  shortname: "Adv.Writing: Genre"
+  department_id: 8
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4834: 
+  name: "Advanced Creative Writing:  Genre Study"
+  shortname: "Adv.Writing: Genre"
+  department_id: 8
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4839: 
+  name: Advanced Web Design
+  shortname: Adv. Web Design
+  department_id: 8
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4930: 
+  name: Senior Project
+  shortname: Senior Project
+  department_id: 8
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c5100: 
+  name: English 5
+  shortname: English 5
+  department_id: 1
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c5200: 
+  name: History 5
+  shortname: History 5
+  department_id: 2
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c5400: 
+  name: 5th Grade Science
+  shortname: Science 5
+  department_id: 4
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c5500: 
+  name: Spanish 1A
+  shortname: Spanish 1A
+  department_id: 5
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c5610: 
+  name: Magic of Art 5
+  shortname: Magic of Art 5/6
+  department_id: 6
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c5612: 
+  name: 5th Intro to Music
+  shortname: Intro to Music
+  department_id: 6
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c5613: 
+  name: 5th 6th Play
+  shortname: MS Production
+  department_id: 6
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c5620: 
+  name: Magic of Art 5/6
+  shortname: Magic of Art 5/6
+  department_id: 6
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c5627: 
+  name: Playing Shakespeare
+  shortname: Playing Shakesp.
+  department_id: 6
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c5629: 
+  name: Choir 5/6
+  shortname: Choir 5/6
+  department_id: 6
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c5631: 
+  name: Mixed Media (5)
+  shortname: Mixed Media 5/6
+  department_id: 6
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c5636: 
+  name: Intro to Improv 5
+  shortname: Intro to Improv 5/6
+  department_id: 6
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c5639: 
+  name: MS Choir 5/6
+  shortname: MS Choir
+  department_id: 6
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c5710: 
+  name: P.E. 5/6
+  shortname: Fitness and Cond. 5/6
+  department_id: 7
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c5720: 
+  name: P.E. 5/6
+  shortname: Fitness and Cond. 5/6
+  department_id: 7
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c5730: 
+  name: P.E. 5/6
+  shortname: Fitness and Cond. 5/6
+  department_id: 7
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c6100: 
+  name: Literary Thinking 1
+  shortname: Lit. Thinking 1
+  department_id: 1
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c6200: 
+  name: Historical Thinking 1
+  shortname: Hist. Thinking 1
+  department_id: 2
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c6300: 
+  name: Mathematical Thinking 1
+  shortname: Math Thinking 1
+  department_id: 3
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c6400: 
+  name: Scientific Thinking 1
+  shortname: Sci. Thinking 1
+  department_id: 4
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c6500: 
+  name: Spanish 1B
+  shortname: Spanish 1B
+  department_id: 5
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c6810: 
+  name: Info Lit 6F
+  shortname: Info. Lit. 6
+  department_id: 8
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c6822: 
+  name: Environmental Practices 1
+  shortname: Envi. Practices 1
+  department_id: 8
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7100: 
+  name: Literary Thinking 2
+  shortname: Lit. Thinking 2
+  department_id: 1
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7200: 
+  name: Historical Thinking 2
+  shortname: Hist. Thinking 2
+  department_id: 2
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7300: 
+  name: Mathematical Thinking 2
+  shortname: Math Thinking 2
+  department_id: 3
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7400: 
+  name: Scientific Thinking 2
+  shortname: Sci. Thinking 2
+  department_id: 4
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7500: 
+  name: Spanish 2A
+  shortname: Spanish 2A
+  department_id: 5
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7610: 
+  name: Drawing and Painting
+  shortname: Drawing & Painting
+  department_id: 6
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7613: 
+  name: 7th 8th Play
+  shortname: MS Production
+  department_id: 6
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7614: 
+  name: Stagecraft
+  shortname: Stagecraft
+  department_id: 6
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7616: 
+  name: World Drumming
+  shortname: World Drumming
+  department_id: 6
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7623: 
+  name: Documentary Film Making 7-8
+  shortname: Doc. Film 7-8
+  department_id: 6
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7624: 
+  name: Stagecraft
+  shortname: Stagecraft
+  department_id: 6
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7628: 
+  name: "Acting:  Scenes"
+  shortname: "Acting:  Scenes"
+  department_id: 6
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7629: 
+  name: MS Choir
+  shortname: Choir
+  department_id: 6
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7632: 
+  name: Mixed Media (S)
+  shortname: Mixed Media
+  department_id: 6
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7634: 
+  name: Stagecraft
+  shortname: Stagecraft
+  department_id: 6
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7638: 
+  name: "Acting:  Scenes"
+  shortname: "Acting:  Scenes"
+  department_id: 6
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7710: 
+  name: P.E. 7/8
+  shortname: Fitness and Cond.
+  department_id: 7
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7720: 
+  name: P.E. 7/8
+  shortname: Fitness and Cond.
+  department_id: 7
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7730: 
+  name: P.E. 7/8
+  shortname: Fitness and Cond.
+  department_id: 7
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7820: 
+  name: Info Lit 7W
+  shortname: Info. Lit. 7
+  department_id: 8
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c7832: 
+  name: Environmental Practices 2
+  shortname: Envi. Practices 2
+  department_id: 8
+  term_id: 3
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c8100: 
+  name: Literary Thinking 3
+  shortname: Lit. Thinking 3
+  department_id: 1
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c8200: 
+  name: Historical Thinking 3
+  shortname: Hist. Thinking 3
+  department_id: 2
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c8300: 
+  name: Mathematical Thinking 3
+  shortname: Math Thinking 3
+  department_id: 3
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c8400: 
+  name: Scientific Thinking 3
+  shortname: Sci. Thinking 3
+  department_id: 4
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c8500: 
+  name: Spanish 2B
+  shortname: Spanish 2B
+  department_id: 5
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c8812: 
+  name: Environmental Practices 3
+  shortname: Envi. Practices 3
+  department_id: 4
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c8824: 
+  name: Communication in the Digital Age
+  shortname: Dig. Communications
+  department_id: 8
+  term_id: 2
+  graded: 1
+  archived: 0
+  list_in_catalog: true
+  credits: 1
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c6900: 
+  name: Lunch 6
+  shortname: 
+  department_id: 0
+  term_id: 4
+  graded: 0
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1900: 
+  name: Lunch 9
+  shortname: 
+  department_id: 0
+  term_id: 4
+  graded: 0
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c9994: 
+  name: US Meeting
+  shortname: 
+  department_id: 9
+  term_id: 4
+  graded: 0
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c9997: 
+  name: Advisory - MS
+  shortname: 
+  department_id: 9
+  term_id: 4
+  graded: 0
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1901: 
+  name: Advisory - 9
+  shortname: 
+  department_id: 9
+  term_id: 4
+  graded: 0
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c9900: 
+  name: MS Assembly
+  shortname: 
+  department_id: 0
+  term_id: 4
+  graded: 0
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c1801: 
+  name: Upper School Assembly
+  shortname: 
+  department_id: 9
+  term_id: 4
+  graded: 0
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c9909: 
+  name: Guided Study Hall
+  shortname: GSH
+  department_id: 9
+  term_id: 4
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c9998: 
+  name: Study Hall - MS
+  shortname: MS Study Hall
+  department_id: 9
+  term_id: 4
+  graded: 0
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c9999: 
+  name: Study Hall - US
+  shortname: US Study Hall
+  department_id: 9
+  term_id: 4
+  graded: 0
+  archived: 0
+  list_in_catalog: false
+  credits: 3
+  us_course: false
+  ms_course: true
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c431: 
+  name: "Calculus A:  Alternate Coordinate Systems and Vector-Valued Functions"
+  shortname: Adv.Calc Vector Valued
+  department_id: 3
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4118: 
+  name: "IS:  The Third Wave of Feminism"
+  shortname: "IS:  Feminism:  3rd Wave"
+  department_id: 1
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4612: 
+  name: "IS:  Stagecraft:  Lighting Design"
+  shortname: "IS:  Lighting Design"
+  department_id: 6
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
+c4419: 
+  name: "IS:  Electrical Engineering"
+  shortname: "IS:  Elec. Engineering"
+  department_id: 4
+  term_id: 1
+  graded: 1
+  archived: 0
+  list_in_catalog: false
+  credits: 1
+  us_course: true
+  ms_course: false
+  ls_course: false
+  rotation: 
+  previous_course_id: 
+  next_course_id: 
+  prereq_ids: 
+  type: 
+
