@@ -1,10 +1,8 @@
 <div id='course-catalog'>
   <ul id="course-grid" class="course-grid">
-    <% @courses.each do |course| %>
+    <% @courses.each do |course_offering| %>
       <li>
-        <a href="http://cargocollective.com/jaimemartinez/" data-largesrc="images/1.jpg" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
-          <img src="images/thumbs/1.jpg" alt="img01"/>
-        </a>
+        <%= render course_offering %>
       </li>
     <% end %>
 </div>
@@ -13,4 +11,4 @@
     $(function() {
         Grid.init();
     });
-</script
+</script>

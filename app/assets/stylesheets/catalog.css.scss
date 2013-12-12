@@ -1,3 +1,57 @@
 // Place all the styles related to the catalog controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#course-grid {
+    
+}
+#course-grid li {
+  display:inline-block;
+}
+
+.course {
+}
+
+.course .course-tile {
+    background-color:red;
+    width:200px;
+    height:250px;
+    border-radius:0px 15px 0px 15px;
+    box-shadow: 3px 3px 2px #444444;
+    margin:15px;
+    padding:10px;
+}
+
+.course-grid {
+  list-style:none;
+  display:inline-block;
+}
+
+.course-card {
+  border: 1px solid black;
+  border-radius: 5px 5px 5px 0px;
+  background-color:"#eeeeee";
+}
+
+.course-card-header {
+
+}
+
+.course-card-stats {
+
+}
+
+.course-title {
+
+}
+
+.course-name {
+
+}
+
+.course-prereqs {
+
+}
+
+.course-description {
+
+}

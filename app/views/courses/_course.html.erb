@@ -1,0 +1,9 @@
+<div class='course' id='course_<%=course.id%>'>
+  <div class='course-tile'>
+    <%= render partial: "course_tile", locals: {course: course} %>
+  </div>
+
+  <div class='course-card'>
+    <%= render partial: "course_card", locals: {course: course} %>
+  </div>
+</div>

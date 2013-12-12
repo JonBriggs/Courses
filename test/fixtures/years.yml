@@ -1,0 +1,92 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: "2000-2001"
+  short_name: "00-01"
+  current: false
+  current_graded: false
+
+two:
+  name: "2001-2002"
+  short_name: "01-02"
+  current: false
+  current_graded: false
+
+three:
+  name: "2002-2003"
+  short_name: "02-03"
+  current: false
+  current_graded: false
+
+four:
+  name: "2003-2004"
+  short_name: "03-04"
+  current: false
+  current_graded: false
+
+five:
+  name: "2004-2005"
+  short_name: "04-05"
+  current: false
+  current_graded: false
+
+six:
+  name: "2005-2006"
+  short_name: "05-06"
+  current: false
+  current_graded: false
+
+seven:
+  name: "2006-2007"
+  short_name: "06-07"
+  current: false
+  current_graded: false
+
+eight:
+  name: "2007-2008"
+  short_name: "07-08"
+  current: false
+  current_graded: false
+
+nine:
+  name: "2008-2009"
+  short_name: "08-09"
+  current: false
+  current_graded: false
+
+ten:
+  name: "2009-2010"
+  short_name: "09-10"
+  current: false
+  current_graded: false
+
+eleven:
+  name: "2010-2011"
+  short_name: "10-11"
+  current: false
+  current_graded: false
+
+twelve:
+  name: "2011-2012"
+  short_name: "11-12"
+  current: false
+  current_graded: false
+
+thirteen:
+  name: "2012-2013"
+  short_name: "12-13"
+  current: false
+  current_graded: false
+
+fourteen:
+  name: "2013-2014"
+  short_name: "13-14"
+  current: true
+  current_graded: false
+
+three:
+  name: "2002-2003"
+  short_name: "02-03"
+  current: false
+  current_graded: false
+

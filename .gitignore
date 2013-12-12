@@ -6,7 +6,11 @@
 
 # Ignore bundler config.
 /.bundle
-
+#ignore editor files
+/.idea
+*~
+*.swp
+*.swo
 # Ignore the db config file
 /config/database.yml
 

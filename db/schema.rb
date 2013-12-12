@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131111225240) do
+ActiveRecord::Schema.define(version: 20131119185732) do
 
   create_table "course_offerings", force: true do |t|
     t.integer  "course_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20131111225240) do
     t.string   "rotation"
     t.integer  "previous_course_id"
     t.integer  "next_course_id"
+    t.integer  "paired_course_id"
     t.string   "prereq_ids"
     t.string   "type"
     t.datetime "created_at"
@@ -71,6 +72,15 @@ ActiveRecord::Schema.define(version: 20131111225240) do
     t.boolean  "t6"
     t.string   "name"
     t.boolean  "current"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "years", force: true do |t|
+    t.string   "name"
+    t.string   "short_name"
+    t.boolean  "current"
+    t.boolean  "current_graded"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

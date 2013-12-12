@@ -1,0 +1,19 @@
+<div class='course-card-header'>
+  <div class='course-card-stats'>
+    <%= render partial: "course_stats", locals: {course: course} %>
+  </div>
+  <div class='course-title'>
+    <div class='course-info'>
+      <%= render partial: "course_info", locals: {course: course} %>
+    </div>
+    <div class='course-name'>
+      <%=course.name%>
+    </div>
+    <div class='course-prereqs'>
+      <%= render partial: "course_prereqs", locals: {course: course} %>
+    </div>
+  </div>
+</div>
+<div class='course-description'>
+  <%=render course.current_course_offering%>
+</div>
