@@ -1,5 +1,6 @@
 Courses::Application.routes.draw do
   get "catalog/index"
+  get "catalog/test"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
