@@ -191,7 +191,7 @@ var Grid = (function() {
         support = Modernizr.csstransitions,
     // default settings
         settings = {
-            minHeight : 500,
+            minHeight : 300,
             speed : 350,
             easing : 'ease'
         };
@@ -324,14 +324,14 @@ var Grid = (function() {
     Preview.prototype = {
         create : function() {
             // create Preview structure:
-            this.$title = $( '<h3></h3>' );
+            //this.$title = $( '<h3></h3>' );
             this.$description = $( '<p></p>' );
-            this.$href = $( '' );
-            this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href );
-            this.$loading = $( '<div class="og-loading"></div>' );
-            this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
+            //this.$href = $( '' );
+            this.$details = $( '<div class="og-details"></div>' ).append(  this.$description); //, this.$href this.$title,
+            //this.$loading = $( '<div class="og-loading"></div>' );
+            //this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
             this.$closePreview = $( '<span class="og-close"></span>' );
-            this.$previewInner = $( '<div class="og-expander-inner"></div>' ).append( this.$closePreview, this.$fullimage, this.$details );
+            this.$previewInner = $( '<div class="og-expander-inner"></div>' ).append( this.$closePreview, this.$details ); //, this.$fullimage
             this.$previewEl = $( '<div class="og-expander"></div>' ).append( this.$previewInner );
             // append preview element to the item
             this.$item.append( this.getEl() );
@@ -361,37 +361,22 @@ var Grid = (function() {
             // update preview´s content
             var $itemEl = this.$item.children( 'a' ),
                 eldata = {
-                    href : $itemEl.attr( 'href' ),
-                    largesrc : $itemEl.data( 'largesrc' ),
-                    title : $itemEl.data( 'title' ),
-                    description : $itemEl.data( 'description' )
+                    //href : "", //$itemEl.attr( 'href' ),
+                    //largesrc : "", //$itemEl.data( 'largesrc' ),
+                    //title : $itemEl.data( 'title' ),
+                    description : "" //$itemEl.data( 'description' )
                 };
 
-            this.$title.html( eldata.title );
+//            this.$title.html( eldata.title );
 //            this.$description.html( eldata.description );
             this.$description.html( $itemEl.children('.course-card').html() );
-            this.$href.attr( 'href', eldata.href );
+            //this.$href.attr( 'href', eldata.href );
 
             var self = this;
 
             // remove the current image in the preview
             if( typeof self.$largeImg != 'undefined' ) {
                 self.$largeImg.remove();
-            }
-
-            // preload large image and add it to the preview
-            // for smaller screens we don´t display the large image (the media query will hide the fullimage wrapper)
-            if( false && self.$fullimage.is( ':visible' ) ) {
-                this.$loading.show();
-                $( '<img/>' ).load( function() {
-                    var $img = $( this );
-                    if( $img.attr( 'src' ) === self.$item.children('a').data( 'largesrc' ) ) {
-                        self.$loading.hide();
-                        self.$fullimage.find( 'img' ).remove();
-                        self.$largeImg = $img.fadeIn( 350 );
-                        self.$fullimage.append( self.$largeImg );
-                    }
-                } ).attr( 'src', eldata.largesrc );
             }
 
         },

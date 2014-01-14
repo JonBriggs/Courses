@@ -107,27 +107,16 @@ background-color: #999999;
   background: #333;
 }
 
-.og-fullimg,
 .og-details {
-  width: 50%;
-  float: left;
+  width:80%;
+  margin-right:auto;
+  margin-left:auto;
+  text-align:left;
+  padding: 0 20px 0 20px;
+  border:1px dashed #333;
   height: 100%;
   overflow: hidden;
   position: relative;
-}
-
-.og-details {
-  padding: 0 40px 0 20px;
-}
-
-.og-fullimg {
-  text-align: center;
-}
-
-.og-fullimg img {
-  display: inline-block;
-  max-height: 100%;
-  max-width: 100%;
 }
 
 .og-details h3 {
