@@ -1,15 +1,20 @@
 <div id='filters'>
   <ul class='inline'>
-    <li onclick='$(".dept-1").toggle();'><span class='dept-1' style='background-color:red;display:none;'>[]</span><span class='dept-1' style='background-color:green'>[]</span>Eng</li>
-    <li onclick='$(".dept-2").toggle();'><span class='dept-2' style='background-color:red;display:none;'>[]</span><span class='dept-2' style='background-color:green'>[]</span>Hist</li>
-    <li onclick='$(".dept-3").toggle();'><span class='dept-3' style='background-color:red;display:none;'>[]</span><span class='dept-3' style='background-color:green'>[]</span>Math</li>
-    <li onclick='$(".dept-4").toggle();'><span class='dept-4' style='background-color:red;display:none;'>[]</span><span class='dept-4' style='background-color:green'>[]</span>Sci</li>
-    <li onclick='$(".dept-5").toggle();'><span class='dept-5' style='background-color:red;display:none;'>[]</span><span class='dept-5' style='background-color:green'>[]</span>Span</li>
-    <li onclick='$(".dept-6").toggle();'><span class='dept-6' style='background-color:red;display:none;'>[]</span><span class='dept-6' style='background-color:green'>[]</span>Arts</li>
-    <li onclick='$(".dept-7").toggle();'><span class='dept-7' style='background-color:red;display:none;'>[]</span><span class='dept-7' style='background-color:green'>[]</span>P.E.</li>
-    <li onclick='$(".dept-8").toggle();'><span class='dept-8' style='background-color:red;display:none;'>[]</span><span class='dept-8' style='background-color:green'>[]</span>Elec</li>
+    <% subj = ["Eng","Hist","Math","Sci","Span","Arts","P.E.","Elec"] %>
+    <% 8.times do |i| %>
+      <li onclick='$(".dept-<%=i+1%>").toggle();'>
+	    <span class='dept-<%=i+1%>' style='background-color:red;display:none;'>
+		  [o]
+		</span>
+		<span class='dept-<%=i+1%>' style='background-color:green'>
+		  [x]
+		</span>
+		  <%= subj[i] %>
+	  </li>
+    <% end %>
   </ul>
 </div>
+
 <div id='course-catalog'>
   <ul id="og-grid" class="og-grid">
     <% @courses.each do |course| %>

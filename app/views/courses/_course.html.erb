@@ -2,13 +2,11 @@
    id='course_<%=course.id%>'
    class='course dept-<%=course.department_id%>'
    data-largesrc="/assets/<%=course.department_id%>.jpg"
-   data-title="<%=course.name%>"
-   data-description="will ajax load">
+   data-title="<%=course.name%>" >
   <div class='course-tile'>
     <%= render partial: "course_tile", locals: {course:course} %>
   </div>
   <div class='course-card' style="display:none">
-    COURSE_CARD_INNERHTML
     <%= render partial: "course_card", locals: {course: course} %>
   </div>
 </a>
