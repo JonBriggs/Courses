@@ -7,6 +7,10 @@
 
 html { height: 100%; }
 
+body {
+background-color: #999999;
+}
+
 *,*:after,
 *:before {
   -webkit-box-sizing: border-box;
@@ -226,28 +230,28 @@ a.course .course-tile {
     vertical-align:top;
 }
 a.dept-1 div.course-tile{
-  background-color: #00eeba;
+  //background-color: #00eeba;
 }
 a.dept-2 div.course-tile{
-  background-color: #eee287;
+  //background-color: #eee287;
 }
 a.dept-3 div.course-tile{
-  background-color: #e187ee;
+  //background-color: #e187ee;
 }
 a.dept-4 div.course-tile{
-  background-color: #a2ee75;
+  //background-color: #a2ee75;
 }
 a.dept-5 div.course-tile{
-  background-color: #eeb869;
+  //background-color: #eeb869;
 }
 a.dept-6 div.course-tile{
-  background-color: #ee657d;
+  //background-color: #ee657d;
 }
 a.dept-7 div.course-tile{
-  background-color: #49cdee;
+  //background-color: #49cdee;
 }
 a.dept-8 div.course-tile{
-  background-color: #88eee6;
+  //background-color: #88eee6;
 }
 .course-card {
 //  border: 1px solid black;
@@ -280,3 +284,13 @@ a.dept-8 div.course-tile{
 }
 
 ul.inline li {display:inline-block;cursor:pointer;}
+
+.tiletitle {
+color: #002b61;
+font-weight: 700;
+font-size: 1.2em;
+}
+
+.tileimg {
+padding-bottom: 10px;
+}
