@@ -1,13 +1,14 @@
 <div id='filters'>
+  <h4>Disciplines:</h4>
   <ul class='inline'>
-    <% subj = ["Eng","Hist","Math","Sci","Span","Arts","P.E.","Elec"] %>
+    <% subj = ["English","History","Math","Science","Spanish","Arts","P.E.","Electives"] %>
     <% 8.times do |i| %>
       <li onclick='$(".dept-<%=i+1%>").toggle();'>
-	    <span class='dept-<%=i+1%>' style='background-color:red;display:none;'>
-		  [o]
+	    <span class='dept-<%=i+1%>' style='background-color: red; display:none;'>
+		  [+]
 		</span>
-		<span class='dept-<%=i+1%>' style='background-color:green'>
-		  [x]
+		<span class='dept-<%=i+1%>'>
+		  [-]
 		</span>
 		  <%= subj[i] %>
 	  </li>

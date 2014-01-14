@@ -230,28 +230,29 @@ a.course .course-tile {
     vertical-align:top;
 }
 a.dept-1 div.course-tile{
-  //background-color: #00eeba;
+  background-color: #ccd4df;
 }
 a.dept-2 div.course-tile{
-  //background-color: #eee287;
+  background-color: #ebf3f8;
 }
 a.dept-3 div.course-tile{
-  //background-color: #e187ee;
+  background-color: #d9d9d9;
 }
 a.dept-4 div.course-tile{
-  //background-color: #a2ee75;
+  background-color: #eceecc;
 }
 a.dept-5 div.course-tile{
-  //background-color: #eeb869;
+  background-color: #fcefcc;
 }
 a.dept-6 div.course-tile{
-  //background-color: #ee657d;
+  background-color: #e4e0e9;
+
 }
 a.dept-7 div.course-tile{
-  //background-color: #49cdee;
+  background-color: #fbe2d3;
 }
 a.dept-8 div.course-tile{
-  //background-color: #88eee6;
+  background-color: #e5e5e5;
 }
 .course-card {
 //  border: 1px solid black;
@@ -292,5 +293,13 @@ font-size: 1.2em;
 }
 
 .tileimg {
-padding-bottom: 10px;
+padding-bottom: 15px;
+}
+
+#filters {
+margin-left: auto;
+margin-right: auto;
+width: 70%;
+padding-top: 30px;
+font-size: 1.2em;
 }
