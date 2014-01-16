@@ -1,13 +1,12 @@
 <div class='course-card-header'>
-  <div class='course-card-stats'>
-    <%= render partial: "course_stats", locals: {course: course} %>
-  </div>
   <div class='course-title'>
-  	<div class='course-info'>
-      <%= render partial: "course_info", locals: {course: course} %>
-    </div>
+
     <div class='course-name'>
-      <%=course.name%>
+	  <img class='tileimg' src='/assets/thumbs/<%=course.department_id%>.png' alt='<%=course.department_id%>'>
+      <span class='big-name'><%=course.name%></span>
+	  <div class='course-card-stats'>
+        <%= render partial: "course_stats", locals: {course: course} %>
+      </div>
     </div>
     <div class='course-prereqs'>
       <%= render partial: "course_prereqs", locals: {course: course} %>

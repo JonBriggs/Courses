@@ -1,3 +1,6 @@
 
-  <div class="tileimg"><img src='/assets/thumbs/<%=course.department_id%>.png' alt='<%=course.department_id%>'></div>
+  <div class="course-tile-stats">
+    <img class='tileimg' src='/assets/thumbs/<%=course.department_id%>.png' alt='<%=course.department_id%>'>
+    <%= render partial: "course_stats", locals: {course: course} %>
+  </div>
   <div class="tiletitle"><%=course.name%></div>

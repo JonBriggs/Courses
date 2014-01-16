@@ -1,0 +1,19 @@
+Make descriptions markdown descriptions
+Get stats box dynamically populating from database
+prereq only shows up when prereq exists (gray bar remains)
+Hovertext on stat boxes
+
+
+Filters/Sorting/Etc
+Filter - mini-icon, gray off, lit on filter for disciplines
+ - All/Eng/Hist/etc.
+ - MS / US toggles (show MS applicable courses, show US applicable courses)
+ - E(and e) / R toggles
+
+Sorting is fixed
+discipline_id, then a sorting field in ascending order
+
+
+Bonus features
+-check mark for course titles in the bottom right and then a filter for all / checked / unchecked
+-ideally persist in a cookie - unlikely to get there this round
