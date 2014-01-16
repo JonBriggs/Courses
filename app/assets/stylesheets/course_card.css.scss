@@ -1,9 +1,17 @@
 .og-details {
-    border-radius:10px;
+    border: none;
+	border-radius:10px;
+	background-color: #fefefe;
+	padding:5px;
 }
-.og-details {
-    padding:5px;
+.og-expander {
+    background-color: #fefefe;
 }
+
+.og-grid li.og-expanded > a::after {
+	border-bottom-color: #fefefe;
+}
+
 .course-title{
     color:black;
 	height:75px;
@@ -66,4 +74,5 @@
   margin-left:auto;
   margin-right:auto;
   text-align:left;
+  padding-top: 15px;
 }
