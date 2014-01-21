@@ -9,6 +9,7 @@ html { height: 100%; }
 
 body {
 background-color: #7a7a7a;
+background-image:url('body-bg.jpg');
 font-family:'Lato',Calibri,Arial,sans-serif;
 }
 
@@ -220,29 +221,29 @@ a.course .course-tile {
     vertical-align:top;
 }
 a.dept-1 div.course-tile{
-  background-color: #ccd4df;
+  background-color: #fefefe;
 }
 a.dept-2 div.course-tile{
-  background-color: #ebf3f8;
+  background-color: #fefefe;
 }
 a.dept-3 div.course-tile{
-  background-color: #d9d9d9;
+  background-color: #fefefe;
 }
 a.dept-4 div.course-tile{
-  background-color: #eceecc;
+  background-color: #fefefe;
 }
 a.dept-5 div.course-tile{
-  background-color: #fcefcc;
+  background-color: #fefefe;
 }
 a.dept-6 div.course-tile{
-  background-color: #e4e0e9;
+  background-color: #fefefe;
 
 }
 a.dept-7 div.course-tile{
-  background-color: #fbe2d3;
+  background-color: #fefefe;
 }
 a.dept-8 div.course-tile{
-  background-color: #e5e5e5;
+  background-color: #fefefe;
 }
 .course-card {
 //  border: 1px solid black;
@@ -277,13 +278,13 @@ a.dept-8 div.course-tile{
 ul.inline li {display:inline-block;cursor:pointer;}
 
 .tiletitle {
-color: #002b61;
+color: #333333;
 font-weight: 700;
-font-size: 1.2em;
+font-size: 1.3em;
 }
 
 .tileimg {
-padding-bottom: 5px;
+padding-bottom: 20px;
 }
 
 #filters {
