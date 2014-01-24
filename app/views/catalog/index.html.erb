@@ -14,6 +14,7 @@
 	  </li>
     <% end %>
   </ul>
+  <p><a href="#" id="trigger" class="menu-trigger">Open/Close Menu</a></p>
 </div>
 
 <div id='course-catalog'>
@@ -24,11 +25,12 @@
       </li>
     <% end %>
 </div>
-
+<%= render partial: "menu"%>
 <script>
     $(document).ready(function() {
         console.log("document ready");
         Grid().init();
         console.log("Grid initialized");
+		new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
     });
 </script>
