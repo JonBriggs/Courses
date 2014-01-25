@@ -58,14 +58,11 @@
 	}
 
 	function mlPushMenu( el, trigger, options ) {	
-		console.log("init push menu");
 		this.el = el;
 		this.trigger = trigger;
 		this.options = extend( this.defaults, options );
 		// support 3d transforms
-					console.log("test 3d");
 		this.support = Modernizr.csstransforms3d;
-					console.log("support 3d?",this.support);
 		if( this.support ) {
 			this._init();
 
@@ -116,7 +113,6 @@
 
 			// open (or close) the menu
 			this.trigger.addEventListener( this.eventtype, function( ev ) {
-				console.log("menu triggered");
 				ev.stopPropagation();
 				ev.preventDefault();
 				if( self.open ) {

@@ -1,3 +1,4 @@
+<p><a href="#" id="trigger" class="menu-trigger">Course Requirements</a></p>
 <div id='filters'>
   <h4>Disciplines:</h4>
   <ul class='inline'>
@@ -14,18 +15,25 @@
 	  </li>
     <% end %>
   </ul>
-  <p><a href="#" id="trigger" class="menu-trigger">Open/Close Menu</a></p>
 </div>
+<!-- Push Wrapper -->
+	<div class="mp-pusher" id="mp-pusher">
+		<%= render partial: "menu"%>
+		<div class="scroller"><!-- this is for emulating position fixed of the nav -->
+			<div class="scroller-inner">
+				<div id='course-catalog'>
+					<ul id="og-grid" class="og-grid">
+						<% @courses.each do |course| %>
+							<li class='dept-<%=course.department_id%>'>
+								<%= render course %>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+			</div><!-- /scroller-inner -->
+		</div><!-- /scroller -->
+	</div><!-- /pusher -->
 
-<div id='course-catalog'>
-  <ul id="og-grid" class="og-grid">
-    <% @courses.each do |course| %>
-      <li class='dept-<%=course.department_id%>'>
-        <%= render course %>
-      </li>
-    <% end %>
-</div>
-<%= render partial: "menu"%>
 <script>
     $(document).ready(function() {
         console.log("document ready");
