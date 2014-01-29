@@ -90,6 +90,8 @@ table.course-stats td{
 }
 span.big-name{
   font-size:1.5em;
+  padding-left:5px;
+  padding-right:5px;
 }
 .course-description {
   color:black;
@@ -99,3 +101,11 @@ span.big-name{
   text-align:left;
   padding-top: 15px;
 }
+.course-prereqs.dept-1 {background-color:#c50702;}
+.course-prereqs.dept-2 {background-color:#9ec3df;}
+.course-prereqs.dept-3 {background-color:#444444;}
+.course-prereqs.dept-4 {background-color:#a2ad00;}
+.course-prereqs.dept-5 {background-color:#f0b300;}
+.course-prereqs.dept-6 {background-color:#7a6691;}
+.course-prereqs.dept-7 {background-color:#eb7125;}
+.course-prereqs.dept-8 {background-color:#808080;}
