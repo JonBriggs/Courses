@@ -1,9 +1,9 @@
 <table class='course-stats'>
   <tr>
-    <td>E*</td>
-	<td>0.5</td>
+    <td><%= course.credits == 3 ? "Y" : "T" %></td>
+	<td><%=course.credits%></td>
   </tr>
   <tr>
-    <td colspan='2'>10-12</td>
+    <td colspan='2'><%=course.gradelevels%></td>
   </tr>
 </table>
