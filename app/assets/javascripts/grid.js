@@ -12,14 +12,16 @@ var $event = $.event,
     resizeTimeout;
 
 $special = $event.special.debouncedresize = {
-    setup: function() {
+    setup: function() { // run once on page load
         $( this ).on( "resize", $special.handler );
     },
     teardown: function() {
         $( this ).off( "resize", $special.handler );
+        console.log("teardown");
     },
-    handler: function( event, execAsap ) {
+    handler: function( event, execAsap ) { //run on every page resize
         // Save the context
+        console.log('in handler');
         var context = this,
             args = arguments,
             dispatch = function() {
@@ -177,7 +179,7 @@ var Grid = (function() {
     // extra margin when expanded (between preview overlay and the next items)
         marginExpanded = 10,
         $window = $( window ), winsize,
-        $body = $( 'html, body' ),
+        $body = $( 'html'),
     // transitionend events
         transEndEventNames = {
             'WebkitTransition' : 'webkitTransitionEnd',
@@ -197,7 +199,6 @@ var Grid = (function() {
         };
 
     function init( config ) {
-        console.log("loaded " + $items.length + "courses");
         // the settings..
         settings = $.extend( true, {}, settings, config );
 
@@ -221,8 +222,10 @@ var Grid = (function() {
         $items.each( function() {
             var $item = $( this );
             $item.data( 'offsetTop', $item.offset().top );
+            console.log($item.data( 'offsetTop', $item.offset().top ));
             if( saveheight ) {
                 $item.data( 'height', $item.height() );
+                console.log($item.data( 'height', $item.height()));
             }
         } );
     }
@@ -409,6 +412,7 @@ var Grid = (function() {
                 this.$previewEl.css( 'height', 0 );
                 // the current expanded item (might be different from this.$item)
                 var $expandedItem = $items.eq( this.expandedIdx );
+                console.log($expandedItem.data( 'height'));
                 $expandedItem.css( 'height', $expandedItem.data( 'height' ) ).on( transEndEventName, onEndFn );
 
                 if( !support ) {
@@ -422,7 +426,7 @@ var Grid = (function() {
         },
         calcHeight : function() {
 
-            var heightPreview = winsize.height - this.$item.data( 'height' ) - marginExpanded,
+            var heightPreview = this.$item.data( 'height'), //winsize.height - this.$item.data( 'height' ) - marginExpanded,
                 itemHeight = winsize.height;
 
             if( heightPreview < settings.minHeight ) {
@@ -460,10 +464,14 @@ var Grid = (function() {
             // case 2 : preview height + item height does not fit in window´s height and preview height is smaller than window´s height
             // case 3 : preview height + item height does not fit in window´s height and preview height is bigger than window´s height
             var position = this.$item.offset().top, //data( 'offsetTop' ),
-                previewOffsetT = this.$previewEl.offset().top - scrollExtra,
-                scrollVal = this.height + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
+                previewOffsetT = this.$previewEl.offset().top - scrollExtra;
 
+            //var scrollVal = this.height + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
+            var scrollVal = position + marginExpanded - scrollExtra;
+            //console.log("about to scroll", this.height, this.$item.data('height'), position,previewOffsetT,scrollVal,scrollExtra);
+            //console.log('this.height', "this.$item.data('height')", "position","previewOffsetT","scrollVal","scrollExtra");
             $body.animate( { scrollTop : scrollVal }, settings.speed );
+
 
         },
         setTransition  : function() {
