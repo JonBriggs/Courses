@@ -193,7 +193,7 @@ var Grid = (function() {
         support = Modernizr.csstransitions,
     // default settings
         settings = {
-            minHeight : 300,
+            minHeight : 400,
             speed : 350,
             easing : 'ease'
         };
@@ -222,7 +222,6 @@ var Grid = (function() {
         $items.each( function() {
             var $item = $( this );
             $item.data( 'offsetTop', $item.offset().top );
-            console.log($item.data( 'offsetTop', $item.offset().top ));
             if( saveheight ) {
                 $item.data( 'height', $item.height() );
                 console.log($item.data( 'height', $item.height()));
@@ -426,7 +425,7 @@ var Grid = (function() {
         },
         calcHeight : function() {
 
-            var heightPreview = this.$item.data( 'height'), //winsize.height - this.$item.data( 'height' ) - marginExpanded,
+            var heightPreview = winsize.height - this.$item.data( 'height' ) - marginExpanded,
                 itemHeight = winsize.height;
 
             if( heightPreview < settings.minHeight ) {
@@ -447,8 +446,8 @@ var Grid = (function() {
                     }
                     self.$item.addClass( 'og-expanded' );
                 };
-
             this.calcHeight();
+            console.log(this.height);
             this.$previewEl.css( 'height', this.height );
             this.$item.css( 'height', this.itemHeight ).on( transEndEventName, onEndFn );
 

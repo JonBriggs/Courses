@@ -273,7 +273,7 @@ a.dept-8 div.course-tile{
 .course-description {
 
 }
-
+ul.inline {display:inline;}
 ul.inline li {display:inline-block;cursor:pointer;}
 
 .tiletitle {
@@ -297,4 +297,11 @@ font-size: 1.2em;
 float: left;
 margin-left: -100px;
 width: 130px;
+}
+.tabon {
+  border:2px solid blue;
+  border-radius:5px;
+}
+.taboff {
+  background-color:gray;
 }

@@ -1,20 +1,24 @@
 
 <div id='filters'>
 <div id='drawer-link'><a href="#" id="trigger" class="menu-trigger">Course Requirements</a></div>
-  <h4>Disciplines:</h4>
-  <ul class='inline'>
+  <span class='filter-header'>Disciplines:</span>
+  <ul class='inline' id='discipline-filter'>
     <% subj = ["English","History","Math","Science","Spanish","Arts","P.E.","Electives"] %>
+    <li data-dept='0' class='dept-0 tabon'>
+        All
+    </li>
     <% 8.times do |i| %>
-      <li onclick='$(".dept-<%=i+1%>").toggle();'>
-	    <span class='dept-<%=i+1%>' style='background-color: red; display:none;'>
-		  [+]
-		</span>
-		<span class='dept-<%=i+1%>'>
-		  [-]
-		</span>
+      <li class='dept-<%=i+1%>'  data-dept='<%=i+1%>'>
 		  <%= subj[i] %>
 	  </li>
     <% end %>
+  </ul>
+  <br />
+  <span class='filter-header'>Age Level:</span>
+  <ul class='inline' id='age-filter'>
+    <li data-age='all' class='tabon'>All Ages</li>
+    <li data-age='ms'>Middle School</li>
+    <li data-age='us'>Upper School</li>
   </ul>
 </div>
 <!-- Push Wrapper -->
@@ -25,7 +29,7 @@
 				<div id='course-catalog'>
 					<ul id="og-grid" class="og-grid">
 						<% @courses.each do |course| %>
-							<li class='dept-<%=course.department_id%>'>
+							<li class='dept-<%=course.department_id%> age-<%=course.age_level%>'>
 								<%= render course %>
 							</li>
 						<% end %>
@@ -38,6 +42,19 @@
 <script>
     $(document).ready(function() {
         console.log("document ready");
+        $('ul#discipline-filter li').on('click',function(){
+           var dept = $(this).data('dept');
+            console.log(dept);
+            $('#discipline-filter li').removeClass("tabon");
+            $('#discipline-filter li.dept-' + dept).addClass("tabon");
+           if (dept == 0) {
+             $('ul#og-grid li').fadeIn();
+           }
+           else {
+             $('ul#og-grid li').fadeOut();
+             $('li.dept-' + dept).delay(300).fadeIn();
+           }
+        });
         Grid().init();
         console.log("Grid initialized");
 		new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
