@@ -4,7 +4,7 @@
   <span class='filter-header'>Disciplines:</span>
   <ul class='inline' id='discipline-filter'>
     <% subj = ["English","History","Math","Science","Spanish","Arts","P.E.","Electives"] %>
-    <li data-dept='0' class='dept-0 tabon'>
+    <li data-dept='all' class='dept-all tabon'>
         All
     </li>
     <% 8.times do |i| %>
@@ -16,9 +16,15 @@
   <br />
   <span class='filter-header'>Age Level:</span>
   <ul class='inline' id='age-filter'>
-    <li data-age='all' class='tabon'>All Ages</li>
-    <li data-age='ms'>Middle School</li>
-    <li data-age='us'>Upper School</li>
+    <li class='age-all tabon' data-age='all'>All Ages</li>
+    <li class='age-ms' data-age='ms'>Middle School</li>
+    <li class='age-us' data-age='us'>Upper School</li>
+  </ul>
+  <span class='filter-header'>Duration:</span>
+  <ul class='inline' id='duration-filter'>
+    <li class='duration-all tabon' data-duration='all'>All Lengths</li>
+    <li class='duration-T' data-duration='T'>Trimester</li>
+    <li class='duration-Y' data-duration='Y'>Year</li>
   </ul>
 </div>
 <!-- Push Wrapper -->
@@ -29,7 +35,7 @@
 				<div id='course-catalog'>
 					<ul id="og-grid" class="og-grid">
 						<% @courses.each do |course| %>
-							<li class='dept-<%=course.department_id%> age-<%=course.age_level%>'>
+							<li class='dept-<%=course.department_id%> age-<%=course.age_level%> duration-<%= course.credits == 3 ? "Y" : "T" %>'>
 								<%= render course %>
 							</li>
 						<% end %>
@@ -40,23 +46,47 @@
 	</div><!-- /pusher -->
 
 <script>
+  function filterTiles(dept,ages,duration){
+      console.log("Filters",dept,ages,duration);
+      $('ul#og-grid li').fadeOut(200);
+      $('ul#og-grid li').filter(function(){
+          return (dept == 'all' || $(this).hasClass("dept-"+dept)) &&
+                  (ages == 'all' || $(this).hasClass('age-'+ages)) &&
+                  (duration == 'all' || $(this).hasClass('duration-'+duration));
+      }).delay(500).fadeIn();
+      /*
+      if (dept == 0) {
+        $('ul#og-grid li').fadeIn();
+      } else {
+        $('ul#og-grid li').fadeOut();
+        $('li.dept-' + dept).delay(300).fadeIn();
+      }
+        */
+  };
     $(document).ready(function() {
         console.log("document ready");
-        $('ul#discipline-filter li').on('click',function(){
+        $('#filters ul.inline li').on('click',function(){
            var dept = $(this).data('dept');
-            console.log(dept);
-            $('#discipline-filter li').removeClass("tabon");
-            $('#discipline-filter li.dept-' + dept).addClass("tabon");
-           if (dept == 0) {
-             $('ul#og-grid li').fadeIn();
+           var age = $(this).data('age');
+           var duration = $(this).data('duration');
+           if (!!dept){
+               console.log(dept);
+              $('#discipline-filter li').removeClass("tabon");
+              $('#discipline-filter li.dept-' + dept).addClass("tabon");
            }
-           else {
-             $('ul#og-grid li').fadeOut();
-             $('li.dept-' + dept).delay(300).fadeIn();
+           if (!!age){
+               $('#age-filter li').removeClass("tabon");
+               $('#age-filter li.age-' + age).addClass("tabon");
            }
+           if (!!duration) {
+               $("#duration-filter li").removeClass("tabon");
+               $("#duration-filter li.duration-" + duration).addClass('tabon');
+           }
+            filterTiles($("ul#discipline-filter li.tabon").data('dept'),
+                        $("ul#age-filter li.tabon").data('age'),
+                        $("ul#duration-filter li.tabon").data('duration'));
         });
         Grid().init();
-        console.log("Grid initialized");
 		new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
     });
 </script>

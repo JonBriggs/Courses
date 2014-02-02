@@ -205,6 +205,11 @@ font-family:'Lato',Calibri,Arial,sans-serif;
   .og-details { float: none; width: 100%; }
 
 }
+div#course-catalog{
+  margin-top:60px;
+}
+div#filters{
+}
 .course {
 }
 
@@ -289,17 +294,42 @@ padding-bottom: 20px;
 #filters {
 margin-left: auto;
 margin-right: auto;
-width: 70%;
-padding-top: 30px;
+width: 100%;
+padding-top: 15px;
+
+margin-top:-60px;
 font-size: 1.2em;
+position:fixed;
+z-index:100;
+background-color:#eee;
+}
+.filter-header {
+  font-weight:bold;
+  margin-left:10px;
+}
+#filters ul.inline{
+  background-color:#ddd;
+  border-color:#999;
+  border-style:solid;
+  border-width:1px;
+  border-radius:5px;
+  padding-left:2px;
+  padding-right:2px;
+  padding-top:1px;
+  padding-bottom:1px;
+}
+#filters ul.inline li{
+  padding-right:4px;
+  padding-left:4px;
 }
 #drawer-link {
 float: left;
-margin-left: -100px;
 width: 130px;
+margin-left:30px;
 }
 .tabon {
-  border:2px solid blue;
+  border:2px solid #002b61;
+  background-color:white;
   border-radius:5px;
 }
 .taboff {

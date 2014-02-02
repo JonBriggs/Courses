@@ -224,7 +224,7 @@ var Grid = (function() {
             $item.data( 'offsetTop', $item.offset().top );
             if( saveheight ) {
                 $item.data( 'height', $item.height() );
-                console.log($item.data( 'height', $item.height()));
+                //console.log($item.data( 'height', $item.height()));
             }
         } );
     }
@@ -411,7 +411,7 @@ var Grid = (function() {
                 this.$previewEl.css( 'height', 0 );
                 // the current expanded item (might be different from this.$item)
                 var $expandedItem = $items.eq( this.expandedIdx );
-                console.log($expandedItem.data( 'height'));
+                //console.log($expandedItem.data( 'height'));
                 $expandedItem.css( 'height', $expandedItem.data( 'height' ) ).on( transEndEventName, onEndFn );
 
                 if( !support ) {
