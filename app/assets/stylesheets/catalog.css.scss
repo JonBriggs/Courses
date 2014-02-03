@@ -208,7 +208,13 @@ font-family:'Lato',Calibri,Arial,sans-serif;
 div#course-catalog{
   margin-top:60px;
 }
-div#filters{
+div#branding{
+  float:right;
+  margin:0px;
+  padding:0px;
+  margin-top:-10px;
+  overflow:hidden;
+  height:100px;
 }
 .course {
 }
@@ -297,7 +303,7 @@ margin-right: auto;
 width: 100%;
 padding-top: 15px;
 
-margin-top:-60px;
+margin-top:-70px;
 font-size: 1.2em;
 position:fixed;
 z-index:100;
