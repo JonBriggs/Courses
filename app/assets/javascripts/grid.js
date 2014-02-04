@@ -194,6 +194,7 @@ var Grid = (function() {
     // default settings
         settings = {
             minHeight : 400,
+            maxHeight : 500,
             speed : 350,
             easing : 'ease'
         };
@@ -311,8 +312,6 @@ var Grid = (function() {
     function hidePreview() {
         current = -1;
         var preview = $.data( this, 'preview' );
-        console.log(this);
-        console.log(preview);
         preview.close();
         $.removeData( this, 'preview' );
     }
@@ -429,10 +428,13 @@ var Grid = (function() {
 
             var heightPreview = winsize.height - this.$item.data( 'height' ) - marginExpanded,
                 itemHeight = winsize.height;
-
+            //var heightPreview = 500 - this.$item.data('height') - marginExpanded, itemHeight = 500;
             if( heightPreview < settings.minHeight ) {
                 heightPreview = settings.minHeight;
                 itemHeight = settings.minHeight + this.$item.data( 'height' ) + marginExpanded;
+            } else if (heightPreview > settings.maxHeight ){
+              heightPreview = settings.maxHeight;
+              itemHeight = settings.maxHeight + this.$item.data( 'height' ) + marginExpanded;
             }
 
             this.height = heightPreview;
@@ -450,6 +452,7 @@ var Grid = (function() {
                 };
             this.calcHeight();
             console.log(this.height);
+            console.log(this.itemHeight);
             this.$previewEl.css( 'height', this.height );
             this.$item.css( 'height', this.itemHeight ).on( transEndEventName, onEndFn );
 
