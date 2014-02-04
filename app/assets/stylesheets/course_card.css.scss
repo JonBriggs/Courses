@@ -93,6 +93,7 @@ span.big-name{
   font-size:1.5em;
   padding-left:5px;
   padding-right:5px;
+  color: #002b61;
 }
 .course-description {
   color:black;
@@ -105,7 +106,10 @@ span.big-name{
 .course-description p {
   max-height:240px;
   overflow:scroll;
+  padding-bottom: 20px;
+  padding-right: 20px;
 }
+
 .course-prereqs.dept-1 {background-color:#c50702;}
 .course-prereqs.dept-2 {background-color:#9ec3df;}
 .course-prereqs.dept-3 {background-color:#444444;}
