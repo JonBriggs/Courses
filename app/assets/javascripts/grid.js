@@ -311,6 +311,8 @@ var Grid = (function() {
     function hidePreview() {
         current = -1;
         var preview = $.data( this, 'preview' );
+        console.log(this);
+        console.log(preview);
         preview.close();
         $.removeData( this, 'preview' );
     }
@@ -483,7 +485,8 @@ var Grid = (function() {
     }
 
     return {
-        init : init
+        init : init,
+        hidePreview : hidePreview
     };
 
 });

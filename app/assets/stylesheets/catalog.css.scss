@@ -218,7 +218,12 @@ div#branding{
 }
 .course {
 }
-
+#course-filter-stats {
+  width:200px;
+  margin:auto;
+  font-weight:bold;
+  font-style:italic;
+}
 a.course .course-tile {
     background-color:#eeeeee;
     width:200px;

@@ -1,0 +1,33 @@
+<h1>Listing course_offerings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Department</th>
+      <th>Course</th>
+      <th>Term</th>
+      <th>Gradelevels</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @course_offerings.each do |course_offering| %>
+      <tr>
+        <td><%=(course_offering.course.department ? course_offering.course.department.name : course_offering.course.department_id)%></td>
+        <td><%=course_offering.course.name%></td>
+        <td><%=course_offering.course.term_id%></td>
+        <td><%=course_offering.gradelevels%></td>
+        <td><%= link_to 'Show', course_offering %></td>
+        <td><%= link_to 'Edit', edit_course_offering_path(course_offering) %></td>
+        <td><%= link_to 'Destroy', course_offering, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Course offering', new_course_offering_path %>

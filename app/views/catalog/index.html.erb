@@ -28,6 +28,9 @@
     <li class='duration-T' data-duration='T'>Trimester</li>
     <li class='duration-Y' data-duration='Y'>Year</li>
   </ul>
+  <div id='course-filter-stats'>
+    Showing <span id='course-count'>... Courses</span>
+  </div>
 </div>
 <!-- Push Wrapper -->
 	<div class="mp-pusher" id="mp-pusher">
@@ -51,11 +54,21 @@
   function filterTiles(dept,ages,duration){
       console.log("Filters",dept,ages,duration);
       $('ul#og-grid li').fadeOut(200);
+      //simulate the closing of the preview
+      //
+      if ($('.og-expanded').length > 0) {
+          $('.og-expanded a').click();
+          $('.og-expanded').removeClass('og-expanded');
+      }
+      //end simulation
       $('ul#og-grid li').filter(function(){
           return (dept == 'all' || $(this).hasClass("dept-"+dept)) &&
                   (ages == 'all' || $(this).hasClass('age-'+ages)) &&
                   (duration == 'all' || $(this).hasClass('duration-'+duration));
       }).delay(500).fadeIn();
+      $('html').delay(500).animate( { scrollTop : 0 }, 350 );
+      $('#course-count').fadeOut(500);
+      setTimeout("$('#course-count').html($('.course-tile:visible').size() + ' Course' + ($('.course-tile:visible').size() != 1 ? 's' : '')).fadeIn(500);",1000);
       /*
       if (dept == 0) {
         $('ul#og-grid li').fadeIn();
@@ -67,6 +80,7 @@
   };
     $(document).ready(function() {
         console.log("document ready");
+        $('#course-count').html($('.course-tile:visible').size() + ' Courses');
         $('#filters ul.inline li').on('click',function(){
            var dept = $(this).data('dept');
            var age = $(this).data('age');

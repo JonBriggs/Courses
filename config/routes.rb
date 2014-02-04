@@ -1,4 +1,7 @@
 Courses::Application.routes.draw do
+  resources :course_offerings
+  root "catalog#index"
+
   get "catalog/index"
   get "catalog/test"
   # The priority is based upon order of creation: first created -> highest priority.

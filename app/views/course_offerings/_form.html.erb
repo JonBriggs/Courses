@@ -1,0 +1,50 @@
+<div style='float:right;'>
+  <h3>Markdown Basics</h3>
+  <ul>
+    <li>*single asterisks* = <em>single asterisks</em></li>
+    <li>_single underscores_ = <em>single underscores</em></li>
+    <li>**double asterisks** = <strong>double asterisks</strong></li>
+    <li>__double underscores__ = <strong>double underscores</strong></li>
+    <li>_**both**_ = <em><strong>both</strong></em></li>
+  </ul>
+  <a href='http://daringfireball.net/projects/markdown/syntax'>Full Markdown Details - note note all of these can be
+  supported when moving to a PDF generated system.</a>
+</div>
+<%= form_for(@course_offering) do |f| %>
+  <% if @course_offering.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course_offering.errors.count, "error") %> prohibited this course_offering from being saved:</h2>
+
+      <ul>
+      <% @course_offering.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h3><%=@course_offering.course.name%></h3>
+  <label for='gradelevels'>Grade Levels</label>
+  <%= f.text_field :gradelevels %>
+    <br />
+  <label for='sort_order'>Sort Order</label>
+  <%= f.text_field :sort_order %>
+    <br />
+    <label for='info'>Prereqs/additional info</label>
+  <%= f.text_field :info, size: 100 %>
+    <br />
+  <label for='description'>Description</label>
+  <%= f.text_area :description, size: "70x20" %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<div id='preview-card'>
+</div>
+<script type='text/javascript'>
+  $(document).ready(function(){
+      $('#preview-card').html("<%=escape_javascript(render partial: "catalog/course_card", locals: {course: @course_offering.course})%>")
+      $('#course-offering-description').keyup(function(){
+                  $('#preview-card').html("<%=escape_javascript(render partial: "catalog/course_card", locals: {course: @course_offering.course})%>")
+      });
+  });
+</script>

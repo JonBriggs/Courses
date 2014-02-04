@@ -4,12 +4,12 @@
     <div class='course-name'>
 	  <img class='tileimg' src='/assets/thumbs/<%=course.department_id%>.png' alt='<%=course.department_id%>'>
 	  <div class='course-card-stats'>
-        <%= render partial: "course_stats", locals: {course: course} %>
+        <%= render partial: "catalog/course_stats", locals: {course: course, course_offering: course.current_course_offering} %>
       </div>
       <span class='big-name'><%=course.name%></span>
     </div>
     <div class='course-prereqs dept-<%=course.department_id%>'>
-      <%= render partial: "course_prereqs", locals: {course: course} %>
+      <%= render partial: "catalog/course_prereqs", locals: {course: course, course_offering: course.current_course_offering} %>
     </div>
   </div>
 </div>
