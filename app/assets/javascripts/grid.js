@@ -21,7 +21,7 @@ $special = $event.special.debouncedresize = {
     },
     handler: function( event, execAsap ) { //run on every page resize
         // Save the context
-        console.log('in handler');
+        //console.log('in handler');
         var context = this,
             args = arguments,
             dispatch = function() {
@@ -243,13 +243,14 @@ var Grid = (function() {
 
             scrollExtra = 0;
             previewPos = -1;
-            // save item´s offset
+            // save item offset
             saveItemInfo();
             getWinSize();
-            var preview = $.data( this, 'preview' );
-            if( typeof preview != 'undefined' ) {
-                hidePreview();
-            }
+            //Removed to keep descriptions open on scroll/resize
+            //var preview = $.data( this, 'preview' );
+            //if( typeof preview != 'undefined' ) {
+            //    hidePreview();
+            //}
 
         } );
 
