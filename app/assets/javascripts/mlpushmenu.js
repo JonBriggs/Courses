@@ -197,6 +197,7 @@
 			// add class mp-pushed to main wrapper if opening the first time
 			if( this.level === 1 ) {
 				classie.add( this.wrapper, 'mp-pushed' );
+        $('body').animate({scrollTop : 0}, 350);
 				this.open = true;
 			}
 			// add class mp-level-open to the opening level element
