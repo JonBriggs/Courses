@@ -5,20 +5,24 @@
   <!--span id='year'><%= @year.name %> Courses</span-->
   <span class='filter-header'>Disciplines:</span>
   <ul class='inline' id='discipline-filter'>
-    <% subj = ["English","History","Math","Science","Spanish","Arts","P.E.","Electives"] %>
+    <% subj = ["English","History","Math","Science","Spanish","Arts","P.E."] %>
     <li data-dept='all' class='dept-all tabon'>
         All
     </li>
-    <% 8.times do |i| %>
+    <% 7.times do |i| %>
       <li class='dept-<%=i+1%>'  data-dept='<%=i+1%>'>
 		  <%= subj[i] %>
 	  </li>
     <% end %>
+    <%#note that tech is number 10 so we have to skip over 8
+    %>
+    <li class='dept-10' data-dept='10'>Tech</li>
+    <li class='dept-8' data-dept='8'>Electives</li>
   </ul>
   <br />
   <span class='filter-header'>Grade Level:</span>
   <ul class='inline' id='age-filter'>
-    <li class='age-all tabon' data-age='all'>5<super>th</super>-12<super>th</super></li>
+    <li class='age-all tabon' data-age='all'>5<sup>th</sup>-12<sup>th</sup></li>
     <li class='age-ms' data-age='ms'>Middle School</li>
     <li class='age-us' data-age='us'>Upper School</li>
   </ul>
@@ -40,7 +44,7 @@
 				<div id='course-catalog'>
 					<ul id="og-grid" class="og-grid">
 						<% @courses.each do |course| %>
-							<li class='dept-<%=course.department_id%> age-<%=course.age_level%> duration-<%= course.credits == 3 ? "Y" : "T" %>'>
+							<li class='dept-<%=course.department_id%> age-<%=course.current_course_offering.age_level%> duration-<%= course.credits == 3 ? "Y" : "T" %>'>
 								<%= render course %>
 							</li>
 						<% end %>
@@ -63,7 +67,7 @@
       //end simulation
       $('ul#og-grid li').filter(function(){
           return (dept == 'all' || $(this).hasClass("dept-"+dept)) &&
-                  (ages == 'all' || $(this).hasClass('age-'+ages)) &&
+                  (ages == 'all' || $(this).hasClass('age-all') || $(this).hasClass('age-'+ages)) &&
                   (duration == 'all' || $(this).hasClass('duration-'+duration));
       }).delay(500).fadeIn();
       $('html').delay(500).animate( { scrollTop : 0 }, 350 );
@@ -103,6 +107,8 @@
                         $("ul#duration-filter li.tabon").data('duration'));
         });
         Grid().init();
-		new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+		//assets/classie.js		
+		//assets/mlpushmenu.js
+		    new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
     });
 </script>

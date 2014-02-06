@@ -81,7 +81,7 @@ table.course-stats td{
   float:right;
 }
 .course-card-header .course-title{
-  width:80%;
+  width:100%;
   min-height:90px;
   display:inline-block;
 }
@@ -106,7 +106,9 @@ span.big-name{
 }
 .course-description p {
   max-height:240px;
-  /*overflow:scroll;*/
+  overflow:auto;
+  overflow-y:auto;
+  overflow-x:hidden;
   padding-bottom: 20px;
   padding-right: 20px;
 }

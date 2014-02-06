@@ -141,6 +141,7 @@
 							ev.stopPropagation();
 							classie.add( closest( el, 'mp-level' ), 'mp-level-overlay' );
 							self._openMenu( subLevel );
+              $('body').animate({scrollTop : 0 },350);
 						}
 					} );
 				}

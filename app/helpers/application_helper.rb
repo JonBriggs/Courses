@@ -1,5 +1,8 @@
 module ApplicationHelper
   def markdown(text)
+    if text.nil?
+      text = ""
+    end
     options = {
       autolink: true,
       no_intra_emphasis: true,

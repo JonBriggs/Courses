@@ -1,7 +1,7 @@
 namespace :annual_import do
   desc "Setup next year's course offerings"
   task(:move_course_offerings_forward => :environment) do
-    courses = Course.where("list_in_catalog = 1")
+    courses = Course.where("catalog = 1")
 	this_year = Year.current
 	next_year = Year.next_year
     courses.each do |course|
@@ -32,14 +32,16 @@ namespace :annual_import do
     end
 
     headers = csv_courses.shift
+    sort_order = 0
     csv_courses.each do |csv_course|
+      sort_order += 10
       target_course = nil
       department_id = csv_course[headers.index("Discipline")].to_i
       name = csv_course[headers.index("Title")]
       puts name
-      possible_courses = Course.where("department_id = ? and name like ?",department_id,name[0,10] + "%").all
+      possible_courses = Course.where("catalog = 1 and department_id = ? and name like ?",department_id,name[0,10] + "%").all
       if possible_courses.size == 0
-        possible_courses = Course.where("department_id = ?",department_id).all
+        possible_courses = Course.where("catalog = 1 and department_id = ?",department_id).all
       end
       if possible_courses.size == 1
         puts name
@@ -57,7 +59,7 @@ namespace :annual_import do
         puts "\n---" + name
         count = 0
         possible_courses.each do |pc|
-          puts count.to_s + ")" + pc.name
+          puts count.to_s + ") [" + pc.sisid.to_s + "]" + pc.name
           count += 1
         end
         puts "what number matches? (enter a bigger number to skip)"
@@ -72,16 +74,18 @@ namespace :annual_import do
       end
 
       if target_course
-        target_course.name = name
-        target_course.subdiscipline = csv_course[headers.index("SubDiscipline")]
-        target_course.list_in_catalog = true
-        target_course.credits = csv_course[headers.index("Credits")]
-        target_course.required = true if csv_course[headers.index("R-E")] == 'R'
-        target_course.gradelevels = csv_course[headers.index("Grade Level")]
-        target_course.requirements = csv_course[headers.index("Prerequisites")]
+        #target_course.name = name
+        #target_course.subdiscipline = csv_course[headers.index("SubDiscipline")]
+        #target_course.catalog = true
+        #target_course.credits = csv_course[headers.index("Credits")]
+        #target_course.required = true if csv_course[headers.index("R-E")] == 'R'
+        #target_course.gradelevels = csv_course[headers.index("Grade Level")]
+        #target_course.requirements = csv_course[headers.index("Prerequisites")]
         current_offering = target_course.current_course_offering
-        current_offering.description = csv_course[headers.index("CourseDescription")]
-        target_course.save
+        #current_offering.description = csv_course[headers.index("CourseDescription")]
+        #current_offering.gradelevels = target_course.gradelevels
+        #target_course.save
+        current_offering.sort_order = sort_order
         current_offering.save
       end
     end

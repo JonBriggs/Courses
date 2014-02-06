@@ -291,7 +291,7 @@ ul.inline {display:inline;}
 ul.inline li {display:inline-block;cursor:pointer;}
 
 .tiletitle {
-color: #333333;
+color: #002b61;
 font-weight: 700;
 font-size: 1.3em;
 }
@@ -343,4 +343,7 @@ margin-left:30px;
 }
 .taboff {
   background-color:gray;
+}
+#mp-pusher {
+  min-height:820px;
 }
