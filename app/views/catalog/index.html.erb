@@ -40,7 +40,7 @@
 				<div id='course-catalog'>
 					<ul id="og-grid" class="og-grid">
 						<% @courses.each do |course| %>
-							<li class='dept-<%=course.department_id%> age-<%=course.age_level%> duration-<%= course.credits == 3 ? "Y" : "T" %>'>
+							<li class='dept-<%=course.department_id%> age-<%=course.current_course_offering.age_level%> duration-<%= course.credits == 3 ? "Y" : "T" %>'>
 								<%= render course %>
 							</li>
 						<% end %>
@@ -103,6 +103,8 @@
                         $("ul#duration-filter li.tabon").data('duration'));
         });
         Grid().init();
-		new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+		//assets/classie.js		
+		//assets/mlpushmenu.js
+		    new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
     });
 </script>

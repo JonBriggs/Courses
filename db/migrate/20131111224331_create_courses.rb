@@ -8,11 +8,8 @@ class CreateCourses < ActiveRecord::Migration
       t.integer :term_id
       t.boolean :graded
       t.boolean :archived
-      t.boolean :list_in_catalog
+      t.boolean :catalog
       t.float :credits
-      t.boolean :us_course
-      t.boolean :ms_course
-      t.boolean :ls_course
       t.string :rotation
       t.integer :previous_course_id
       t.integer :next_course_id
