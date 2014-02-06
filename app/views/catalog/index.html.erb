@@ -16,9 +16,9 @@
     <% end %>
   </ul>
   <br />
-  <span class='filter-header'>Age Level:</span>
+  <span class='filter-header'>Grade Level:</span>
   <ul class='inline' id='age-filter'>
-    <li class='age-all tabon' data-age='all'>All Ages</li>
+    <li class='age-all tabon' data-age='all'>5<super>th</super>-12<super>th</super></li>
     <li class='age-ms' data-age='ms'>Middle School</li>
     <li class='age-us' data-age='us'>Upper School</li>
   </ul>
@@ -63,7 +63,7 @@
       //end simulation
       $('ul#og-grid li').filter(function(){
           return (dept == 'all' || $(this).hasClass("dept-"+dept)) &&
-                  (ages == 'all' || $(this).hasClass('age-'+ages)) &&
+                  (ages == 'all' || $(this).hasClass('age-all') || $(this).hasClass('age-'+ages)) &&
                   (duration == 'all' || $(this).hasClass('duration-'+duration));
       }).delay(500).fadeIn();
       $('html').delay(500).animate( { scrollTop : 0 }, 350 );
