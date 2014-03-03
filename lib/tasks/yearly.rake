@@ -74,19 +74,20 @@ namespace :annual_import do
       end
 
       if target_course
-        #target_course.name = name
+        target_course.name = name
         #target_course.subdiscipline = csv_course[headers.index("SubDiscipline")]
         #target_course.catalog = true
         #target_course.credits = csv_course[headers.index("Credits")]
         #target_course.required = true if csv_course[headers.index("R-E")] == 'R'
         #target_course.gradelevels = csv_course[headers.index("Grade Level")]
         #target_course.requirements = csv_course[headers.index("Prerequisites")]
-        current_offering = target_course.current_course_offering
+        #current_offering = target_course.current_course_offering
         #current_offering.description = csv_course[headers.index("CourseDescription")]
         #current_offering.gradelevels = target_course.gradelevels
-        #target_course.save
-        current_offering.sort_order = sort_order
-        current_offering.save
+        #current_offering.info = csv_course[headers.index("Prerequisites")]
+        target_course.save
+        #current_offering.sort_order = sort_order
+        #current_offering.save
       end
     end
   end
