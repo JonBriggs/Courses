@@ -70,7 +70,7 @@
                   (ages == 'all' || $(this).hasClass('age-all') || $(this).hasClass('age-'+ages)) &&
                   (duration == 'all' || $(this).hasClass('duration-'+duration));
       }).delay(500).fadeIn();
-      $('html').delay(500).animate( { scrollTop : 0 }, 350 );
+      $('body').delay(500).animate( { scrollTop : 0 }, 350 );
       $('#course-count').fadeOut(500);
       setTimeout("$('#course-count').html($('.course-tile:visible').size() + ' Course' + ($('.course-tile:visible').size() != 1 ? 's' : '')).fadeIn(500);",1000);
       /*

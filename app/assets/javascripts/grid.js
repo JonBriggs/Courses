@@ -179,7 +179,7 @@ var Grid = (function() {
     // extra margin when expanded (between preview overlay and the next items)
         marginExpanded = 10,
         $window = $( window ), winsize,
-        $body = $( 'html'),
+        $body = $( 'body'),
     // transitionend events
         transEndEventNames = {
             'WebkitTransition' : 'webkitTransitionEnd',
