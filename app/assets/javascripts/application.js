@@ -17,3 +17,4 @@
 //= require grid
 //= require classie
 //= require mlpushmenu
+//= require bootstrap

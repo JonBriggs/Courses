@@ -1,6 +1,7 @@
 
   <div class="course-tile-stats">
-    <%= image_tag('thumbs/'+course.department_id.to_s+'.png', class: 'tileimg') %>
+    <%= image_tag('thumbs/'+course.department_id.to_s+'.png', class: 'tileimg', title: course.department.name, data: {toggle: 'tooltip', placement: 'top'}) %>
+
     <%= render partial: "course_stats", locals: {course: course, course_offering: course.current_course_offering} %>
   </div>
   <div class="tiletitle"><%=course.fitted_name%></div>

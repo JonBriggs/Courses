@@ -265,6 +265,8 @@ var Grid = (function() {
                 var $item = $( this ).parent();
                 // check if item already opened
                 current === $item.index() ? hidePreview() : showPreview( $item );
+                $('.og-expander .course-stats td').tooltip();
+                $('.tileimg').tooltip();
                 return false;
 
             } );

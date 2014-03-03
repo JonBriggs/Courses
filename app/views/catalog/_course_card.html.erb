@@ -2,7 +2,7 @@
   <div class='course-title'>
 
     <div class='course-name'>
-    <%= image_tag('thumbs/'+course.department_id.to_s+'.png', class: 'tileimg') %>
+      <%= image_tag('thumbs/'+course.department_id.to_s+'.png', class: 'tileimg', title: course.department.name, data: {toggle: 'tooltip', placement: 'right'}) %>
 	  <div class='course-card-stats'>
         <%= render partial: "catalog/course_stats", locals: {course: course, course_offering: course.current_course_offering} %>
       </div>
