@@ -1,9 +1,9 @@
 <table class='course-stats'>
   <tr>
-    <td><%= course.credits == 3 ? "Y" : "T" %></td>
-	<td><%=course.credits%></td>
+    <td data-toggle='tooltip' data-placement='top' title='<%= course.credits == 3 ? "This course spans the entire (Y)ear" : "This is a single (T)erm course" %>'><%= course.credits == 3 ? "Y" : "T" %></td>
+	<td data-toggle='tooltip' data-placement='top' title='This is a  <%=course.credits%> course" %>'><%=course.credits%></td>
   </tr>
   <tr>
-    <td colspan='2'><%=course_offering.gradelevels%></td>
+    <td colspan='2' data-toggle='tooltip' data-placement='bottom' title='This course is typically taken by in the following grades: <%=course_offering.gradelevels%>'><%=course_offering.gradelevels%></td>
   </tr>
 </table>
