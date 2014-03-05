@@ -17,7 +17,7 @@
   <tbody>
     <% @course_offerings.each do |course_offering| %>
       <tr>
-        <td><%=(course_offering.course.department ? course_offering.course.department.name : course_offering.course.department_id)%></td>
+        <td><%=course_offering.description == nil || course_offering.description.size < 200 ? "!!!" : ""%><%=(course_offering.course.department ? course_offering.course.department.name : course_offering.course.department_id)%></td>
         <td><%=course_offering.course.name%></td>
         <td><%=course_offering.course.term_id%></td>
         <td><%=course_offering.gradelevels%></td>
