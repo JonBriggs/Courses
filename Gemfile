@@ -39,7 +39,8 @@ gem 'bootstrap-sass'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+#COMMENT OUT unicorn for Windows development
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development

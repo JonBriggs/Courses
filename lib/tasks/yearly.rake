@@ -2,8 +2,10 @@ namespace :annual_import do
   desc "Setup next year's course offerings"
   task(:move_course_offerings_forward => :environment) do
     courses = Course.where("catalog = 1")
-	this_year = Year.current
-	next_year = Year.next_year
+    puts "What year are we moving to? (year_id)"
+    year = STDIN.gets.chomp.to_i
+	this_year = Year.find(year - 1)
+	next_year = Year.find(year)
     courses.each do |course|
       puts course.name
       unless CourseOffering.where("course_id = ? and year_id = ?",course.id,next_year.id).first
@@ -14,6 +16,12 @@ namespace :annual_import do
         if last_course_offering
           #co.grade_level_ids = last_course_offering.grade_level_ids
           co.description = last_course_offering.description
+          co.grade_level_ids = last_course_offering.grade_level_ids
+          co.info = last_course_offering.info
+          co.sort_order = last_course_offering.sort_order
+          co.gradelevels = last_course_offering.gradelevels
+        elsif course.cat_entry
+          co.description = course.cat_entry
         else
           co.description = course.description
         end
@@ -21,6 +29,7 @@ namespace :annual_import do
       end
     end
   end
+
 
   desc "Load course information"
   task(:load_course_information => :environment) do

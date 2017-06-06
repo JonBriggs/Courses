@@ -4,7 +4,7 @@ class CourseOfferingsController < ApplicationController
   # GET /course_offerings
   # GET /course_offerings.json
   def index
-    @year = Year.next_year
+    set_working_year
     @course_offerings = CourseOffering.joins(:course).where("year_id = ?",@year).order('courses.department_id,sort_order').all
   end
 
@@ -20,6 +20,7 @@ class CourseOfferingsController < ApplicationController
 
   # GET /course_offerings/1/edit
   def edit
+    @course_offering = CourseOffering.find(params[:id])
   end
 
   # POST /course_offerings

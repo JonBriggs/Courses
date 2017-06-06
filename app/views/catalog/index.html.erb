@@ -19,7 +19,8 @@
     <%#note that tech is number 10 so we have to skip over 8
     %>
     <li class='dept-10' data-dept='10'>Tech</li>
-    <li class='dept-8' data-dept='8'>Electives</li>
+    <li class='dept-8' data-dept='8'>Interdisciplinary</li>
+    <li class='dept-11' data-dept='11'>Seminars</li>
   </ul>
   <br />
   <span class='filter-header'>Grade Level:</span>
@@ -33,6 +34,7 @@
     <li class='duration-all tabon' data-duration='all'>All Lengths</li>
     <li class='duration-T' data-duration='T'>Trimester</li>
     <li class='duration-Y' data-duration='Y'>Year</li>
+    <li class='duration-S' data-duration='S'>Seminar</li>
   </ul>
   <div id='course-filter-stats'>
     Showing <span id='course-count'>... Courses</span>
@@ -46,8 +48,12 @@
 				<div id='course-catalog'>
 					<ul id="og-grid" class="og-grid">
 						<% @courses.each do |course| %>
-							<li class='dept-<%=course.department_id%> age-<%=course.current_course_offering.age_level%> duration-<%= course.credits == 3 ? "Y" : "T" %>'>
-								<%= render course %>
+              <% begin %>
+  							<li class='dept-<%=course.department_id%> age-<%=course.current_course_offering.age_level%> duration-<%= course.credits == 1 ? "T" : course.credits == 0.5 ? "S" : "Y" %>'>
+	  							<%= render course %>
+              <% rescue %>
+                ERROR WITH COURSE <%=course.id%> and OFFERING <%=course.current_course_offering%>
+              <% end %>
 							</li>
 						<% end %>
 					</ul>
