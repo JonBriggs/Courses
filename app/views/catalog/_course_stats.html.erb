@@ -1,3 +1,4 @@
+<h5>app/views/catalog/_course_stats.html.erb</h5>
 <table class='course-stats'>
   <tr>
     <td data-toggle='tooltip' data-placement='bottom' title='<%= course.credits == 1 ? "This is a single (T)erm course" : course.credits == 0.5 ? "This is a (S)eminar course" : "This course spans the entire (Y)ear" %>'><%= course.credits == 1 ? "T" : course.credits == 0.5 ? "S" : "Y" %></td>

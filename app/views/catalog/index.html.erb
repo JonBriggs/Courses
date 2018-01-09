@@ -41,26 +41,17 @@
   </div>
 </div>
 <!-- Push Wrapper -->
-	<div class="mp-pusher" id="mp-pusher">
-		<%= render partial: "menu" %>
-		<div class="scroller"><!-- this is for emulating position fixed of the nav -->
-			<div class="scroller-inner">
-				<div id='course-catalog'>
-					<ul id="og-grid" class="og-grid">
-						<% @courses.each do |course| %>
-              <% begin %>
-  							<li class='dept-<%=course.department_id%> age-<%=course.current_course_offering.age_level%> duration-<%= course.credits == 1 ? "T" : course.credits == 0.5 ? "S" : "Y" %>'>
-	  							<%= render course %>
-              <% rescue %>
-                ERROR WITH COURSE <%=course.id%> and OFFERING <%=course.try(:current_course_offering)%>
-              <% end %>
-							</li>
-						<% end %>
-					</ul>
-				</div>
-			</div><!-- /scroller-inner -->
-		</div><!-- /scroller -->
-	</div><!-- /pusher -->
+<!-- render partial: "menu" This was the discipline description menu -->
+<div id='course-catalog'>
+	<% @courses.each do |course| %>
+    <% begin %>
+	  	<%= render course %>
+    <% rescue %>
+      ERROR WITH COURSE <%=course.id%> and OFFERING <%=course.try(:current_course_offering)%>
+    <% end %>	
+	<% end %>
+	</ul>
+</div>
 
 <script>
   function filterTiles(dept,ages,duration){

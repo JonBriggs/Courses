@@ -3,7 +3,8 @@ class CatalogController < ApplicationController
     #@year = Year.current 
     #@year = Year.next_year
     set_working_year    
-    @courses = CourseOffering.joins(:course).where("year_id = ?",@year).order('sort_order').collect {|co| co.course if co.course.graded?}.compact
+
+    @courses = CourseOffering.joins(:course).where("year_id = ?",@year).order('sort_order').offset(50).limit(50).collect {|co| co.course if co.course.graded?}.compact
     @departments = Department.all
   end
 end
