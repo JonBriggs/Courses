@@ -1,6 +1,6 @@
 class CourseOfferingsController < ApplicationController
   before_action :set_course_offering, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: "eps", password: 'lame_auth' #ENV["COURSESPWD"]
+  http_basic_authenticate_with name: "eps", password: (ENV["COURSESPWD"] ? ENV["COURSESPWD"] || 'changeme')
   # GET /course_offerings
   # GET /course_offerings.json
   def index
