@@ -1,2 +1,2 @@
-class Term < ActiveRecord::Base
+class Term < ApplicationRecord
 end

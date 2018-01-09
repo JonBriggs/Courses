@@ -1,2 +1,2 @@
-class GradeLevel < ActiveRecord::Base
+class GradeLevel < ApplicationRecord
 end

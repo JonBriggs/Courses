@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Courses</title>
+  <link rel="stylesheet"
+          href="assets/material-components-web/dist/material-components-web.css">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class='mdc-typogrpahy'>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 <div id='logo'><%=image_tag("courses_at_eps.jpg")%>
 </div>
@@ -15,5 +17,7 @@
 <div id='container'>
     <%= yield %>
 </div>
+    <script src="assets/material-components-web/dist/material-components-web.js"></script>
+    <script>mdc.autoInit()</script>
 </body>
 </html>

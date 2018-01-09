@@ -1,6 +1,7 @@
-class CourseOffering < ActiveRecord::Base
+class CourseOffering < ApplicationRecord
   belongs_to :course
   belongs_to :year
+  
   def age_level
     if gradelevels == nil || gradelevels == '' || gradelevels.size == 0
       return "all"

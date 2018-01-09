@@ -1,4 +1,4 @@
-class Year < ActiveRecord::Base
+class Year < ApplicationRecord
   has_many :course_offerings
 
   def self.current
