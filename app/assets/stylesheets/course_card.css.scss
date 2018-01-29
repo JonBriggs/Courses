@@ -124,3 +124,33 @@ span.big-name{
 .course-prereqs.dept-8 {background-color:#808080;}
 .course-prereqs.dept-10 {background-color:black;}
 .course-prereqs.dept-11 {background-color:#a45d0e;}
+
+// Cards //
+.mdc-card__media {
+  background-image: url("maxresdefault.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 250px;
+  padding: 0px;
+}
+
+.mdc-card__primary, .mdc-card__actions {
+  background: rgba(0, 0, 0, .6);
+}
+.mdc-card__actions{
+  border-bottom: 2px gray solid;
+  padding: 8px 16px;
+}
+.dep-term-grid {
+  padding: 0px;
+}
+.mdc-card__primary:last-child {
+  padding-bottom: 16px;
+}
+.mdc-card__title--large {
+  font-size: 20px;
+  line-height: 20px;
+}
+.mdc-card__primary .mdc-card__title--large {
+  padding-top: 0px;
+}

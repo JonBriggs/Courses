@@ -4,6 +4,11 @@
 /* General Demo Style */
 /* General Demo Style */
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+$mdc-theme-primary: #00467f; // EPS Blue
+$mdc-theme-secondary: #ffab40; // Orange A200
+$mdc-theme-background: #fff; // White
+
+@import "@material/theme/mdc-theme";
 
 html { height: 100%; }
 
@@ -11,14 +16,12 @@ body {
 background-color: #eaeaea;
 background-image:url('linen.png');
 font-family:'Lato',Calibri,Arial,sans-serif;
+margin: 0px;
 }
 .navbar {
-  height: 50px;
-  min-height:50px;
-  padding-top: 10px;
-  padding-bottom: 0px;
+  padding: 10px 20px;
   border: none;
-  background-color:#002b61;
+  background-color:#00467f;
 }
 /*
  *,*:after,
@@ -312,7 +315,7 @@ font-size: 1.3em;
 padding-bottom: 20px;
 }
 
-#filters {
+/*#filters {
 margin-left: auto;
 margin-right: auto;
 width: 100%;
@@ -320,12 +323,12 @@ padding-top: 0px;
 padding-bottom: 10px;
 margin-top:-10px;
 
-/*margin-top:-70px;*/
+/*margin-top:-70px;
 font-size: 1.2em;
 position:fixed;
 z-index:100;
 background-color:#002b61;
-}
+}*/
 .filter-header {
   font-weight:bold;
   margin-left:10px;
@@ -357,8 +360,11 @@ background-color:#002b61;
   min-height:820px;
 }
 #filters {
-  background-color:#002B61;
+  background-color:#333333;
   color:white;
+  padding: 5px 0px;
+  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
 #discipline-filter {
   color:black;
@@ -371,5 +377,32 @@ background-color:#002b61;
 }
 #course-filter-stats {
   float: right;
+}
+
+/////// MDC CSS /////
+.courses-bar {
+  margin: 0 0 0 20px;
+}
+.courses-bar, .mdc-typography--headline {
+  font-size: 18px;
+}
+.courses-headers {
+  display: inline-block;
+  width: 140px;
+  margin-left: 15px;
+}
+.mdc-tab::after {
+  display: none !important;
+}
+.courses-bar, .mdc-tab {
+    min-width: 0px;
+    min-height: 0px;
+    padding: 5px;
+    display: inline;
+    margin: 0px 5px;
+}
+.mdc-tab--active {
+  color: #eeb111 !important;
+    border-bottom: 1px #eeb111 solid;
 }
 

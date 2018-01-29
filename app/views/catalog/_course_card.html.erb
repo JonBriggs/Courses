@@ -1,19 +1,31 @@
-<h5>app/views/catalog/_course_card.html.erb</h5>
-<div class='course-card-header'>
-  <div class='course-title'>
-
-    <div class='course-name'>
-      <%= image_tag('thumbs/'+course.department_id.to_s+'.png', class: 'tileimg', title: course.department.name, data: {toggle: 'tooltip', placement: 'right'}) %>
-	  <div class='course-card-stats'>
-        <%= render partial: "catalog/course_stats", locals: {course: course, course_offering: course.current_course_offering} %>
+<aside id="course_pop_<%=course.id%>"
+  class="mdc-dialog"
+  role="alertdialog"
+  aria-labelledby="my-mdc-dialog-label"
+  aria-describedby="my-mdc-dialog-description">
+  <div class="mdc-dialog__surface">
+    <header class="mdc-dialog__header">
+      <h2 id="my-mdc-dialog-label" class="mdc-dialog__header__title">
+        <%=course.name%>
+      </h2>
+    </header>
+    <section id="my-mdc-dialog-description" class="mdc-dialog__body">
+      <div class="mdc-layout-grid dep-term-grid">
+        <div class="mdc-layout-grid__inner">
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3"><span class="dep-img" style="color: #eeb111 !important; letter-spacing:.5px;"> F&PA</span><!--<%= image_tag('thumbs/'+course.department_id.to_s+'.png', class: 'tileimg', title: course.department.name, data: {toggle: 'tooltip', placement: 'top'}) %>--></div>
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9" style="text-align:right;"><span class="class-term">Year | 3.0 | 9-12</span><!--<%= render partial: "course_stats", locals: {course: course, course_offering: course.current_course_offering} %>--></div>
+        </div>
       </div>
-      <span class='big-name'><%=course.name%></span>
-    </div>
-    <div class='course-prereqs dept-<%=course.department_id%>'>
-      <%= render partial: "catalog/course_prereqs", locals: {course: course, course_offering: course.current_course_offering} %>
-    </div>
+      <div class='course-prereqs dept-<%=course.department_id%>'>
+        <%= render partial: "catalog/course_prereqs", locals: {course: course, course_offering: course.current_course_offering} %>
+      </div>
+      <div class='course-description'>
+        <%=render course.current_course_offering%>
+      </div>
+    </section>
+    <footer class="mdc-dialog__footer">
+      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Close</button>
+    </footer>
   </div>
-</div>
-<div class='course-description'>
-  <%=render course.current_course_offering%>
-</div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside>

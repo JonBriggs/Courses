@@ -1,56 +1,54 @@
   <div id='filters'>
-  <div id='drawer-link'>
+  <!--<div id='drawer-link'>
     <a href="#" id="trigger" class="menu-trigger">
       Programs & Requirements
     </a>
-  </div>
+  </div>-->
   <!--span id='year'><%= @year.name %> Courses</span-->
-  <span class='filter-header'>Disciplines:</span>
-  <ul class='inline' id='discipline-filter'>
+  <nav id="basic-tab-bar" class="mdc-tab-bar courses-bar"><!-- *****   NEED TO ACCOUNT FOR id="age-filter"   ***** -->
+    <span class='mdc-typography--headline courses-headers'>Grade Level</span>
+    <a data-age='all' class="mdc-tab mdc-tab--active age-all">5<sup>th</sup>-12<sup>th</sup></a>
+    <a class='mdc-tab age-ms' data-age='ms'>Middle School</a>
+    <a class='mdc-tab age-us' data-age='us'>Upper School</a>
+  </nav>
+  <nav id="basic-tab-bar" class="mdc-tab-bar courses-bar"><!--  ******  NEED TO ACCOUNT FOR id="duration-filter   ***** -->
+    <span class='mdc-typography--headline'>Duration</span>
+    <a data-duration="all" class="mdc-tab mdc-tab--active duration-all">All Lengths</a>
+    <a class='mdc-tab duration-T' data-duration='T'>Trimester</a>
+    <a class='mdc-tab duration-Y' data-duration='Y'>Year</a>
+    <a class='mdc-tab duration-S' data-duration='S'>Seminar</a>
+  </nav>
+  <br>
+  <nav id="basic-tab-bar" class="mdc-tab-bar courses-bar"><!-- ******   NEED TO ACCOUNT FOR id="discipline-filter"   ****** -->
+    <span class='mdc-typography--headline courses-headers'>Disciplines</span>
     <% subj = ["English","History/Social Sci.","Math","Science","Spanish","Arts","P.E."] %>
-    <li data-dept='all' class='dept-all tabon'>
-        All
-    </li>
+    <a data-dept='all' class="mdc-tab mdc-tab--active dept-all">All</a>
     <% 7.times do |i| %>
-      <li class='dept-<%=i+1%>'  data-dept='<%=i+1%>'>
-		  <%= subj[i] %>
-	  </li>
+      <a class='mdc-tab dept-<%=i+1%>'  data-dept='<%=i+1%>'>
+      <%= subj[i] %>
+    </a>
     <% end %>
-    <%#note that tech is number 10 so we have to skip over 8
-    %>
-    <li class='dept-10' data-dept='10'>Tech</li>
-    <li class='dept-8' data-dept='8'>Interdisciplinary</li>
-    <li class='dept-11' data-dept='11'>Seminars</li>
-  </ul>
-  <br />
-  <span class='filter-header'>Grade Level:</span>
-  <ul class='inline' id='age-filter'>
-    <li class='age-all tabon' data-age='all'>5<sup>th</sup>-12<sup>th</sup></li>
-    <li class='age-ms' data-age='ms'>Middle School</li>
-    <li class='age-us' data-age='us'>Upper School</li>
-  </ul>
-  <span class='filter-header'>Duration:</span>
-  <ul class='inline' id='duration-filter'>
-    <li class='duration-all tabon' data-duration='all'>All Lengths</li>
-    <li class='duration-T' data-duration='T'>Trimester</li>
-    <li class='duration-Y' data-duration='Y'>Year</li>
-    <li class='duration-S' data-duration='S'>Seminar</li>
-  </ul>
+    <a class='mdc-tab dept-10' data-dept='10'>Tech</a>
+    <a class='mdc-tab dept-8' data-dept='8'>Interdisciplinary</a>
+    <a class='mdc-tab dept-11' data-dept='11'>Seminars</a>
+    <span class="mdc-tab-bar__indicator"></span>
+  </nav>
   <div id='course-filter-stats'>
     Showing <span id='course-count'>... Courses</span>
   </div>
 </div>
 <!-- Push Wrapper -->
 <!-- render partial: "menu" This was the discipline description menu -->
-<div id='course-catalog'>
+<div class="mdc-layout-grid"><!--<div id='course-catalog'>-->
+  <div class="mdc-layout-grid__inner">
 	<% @courses.each do |course| %>
     <% begin %>
-	  	<%= render course %>
+	  	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3"><%= render course %></div>
     <% rescue %>
       ERROR WITH COURSE <%=course.id%> and OFFERING <%=course.try(:current_course_offering)%>
     <% end %>	
 	<% end %>
-	</ul>
+	</div>
 </div>
 
 <script>

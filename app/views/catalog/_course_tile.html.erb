@@ -1,7 +1,13 @@
-<h5>app/views/catalog/_course_tile.html.erb</h5>
-  <div class="course-tile-stats">
-    <%= image_tag('thumbs/'+course.department_id.to_s+'.png', class: 'tileimg', title: course.department.name, data: {toggle: 'tooltip', placement: 'top'}) %>
-
-    <%= render partial: "course_stats", locals: {course: course, course_offering: course.current_course_offering} %>
-  </div>
-  <div class="tiletitle"><%=course.fitted_name%></div>
+<div class="mdc-card mdc-card__media">
+  <section class="mdc-card__actions">
+    <div class="mdc-layout-grid dep-term-grid">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3"><span class="dep-img" style="color: #eeb111 !important; letter-spacing:.5px;"> F&PA</span><!--<%= image_tag('thumbs/'+course.department_id.to_s+'.png', class: 'tileimg', title: course.department.name, data: {toggle: 'tooltip', placement: 'top'}) %>--></div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9" style="text-align:right;"><span class="class-term">Year | 3.0 | 9-12</span><!--<%= render partial: "course_stats", locals: {course: course, course_offering: course.current_course_offering} %>--></div>
+      </div>
+    </div>
+  </section>
+  <section class="mdc-card__primary">
+    <h2 class="mdc-card__title mdc-card__title--large"><%=course.fitted_name%></h2>
+  </section>
+</div>

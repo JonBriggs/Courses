@@ -15,3 +15,15 @@
 //= require turbolinks
 //= require modernizr.custom
 
+var addClassDialog = function(classid) {
+  var dialog = new mdc.dialog.MDCDialog(document.querySelector('#course_pop_' + classid));
+
+  dialog.listen('MDCDialog:cancel', function() {
+    console.log('canceled');
+  })
+
+  document.querySelector('#course_' + classid).addEventListener('click', function (evt) {
+  dialog.lastFocusedTarget = evt.target;
+  dialog.show();
+})
+}
