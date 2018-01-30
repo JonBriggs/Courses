@@ -127,7 +127,7 @@ span.big-name{
 
 // Cards //
 .mdc-card__media {
-  background-image: url("maxresdefault.jpg");
+  // background-image: url("maxresdefault.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 250px;
@@ -143,6 +143,7 @@ span.big-name{
 }
 .dep-term-grid {
   padding: 0px;
+  width: 100%
 }
 .mdc-card__primary:last-child {
   padding-bottom: 16px;
