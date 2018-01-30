@@ -43,7 +43,7 @@
   <div class="mdc-layout-grid__inner">
 	<% @courses.each do |course| %>
     <% begin %>
-	  	<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3"><%= render course %></div>
+	  	<%= render course %>
     <% rescue %>
       ERROR WITH COURSE <%=course.id%> and OFFERING <%=course.try(:current_course_offering)%>
     <% end %>	
@@ -52,24 +52,24 @@
 </div>
 
 <script>
+  
+  function setActiveFilter(el, target){
+    var age = $(el).data(target);
+    $('nav#' + target + '-filter a').removeClass('mdc-tab--active');
+    $('nav#' + target + '-filter a[data-' + target + '="' + age + '"]').addClass('mdc-tab--active');
+  }
+
   function filterTiles(dept,ages,duration){
       console.log("Filters",dept,ages,duration);
-      $('ul#og-grid li').fadeOut(200);
-      //simulate the closing of the preview
-      //
-      if ($('.og-expanded').length > 0) {
-          $('.og-expanded a').click();
-          $('.og-expanded').removeClass('og-expanded');
-      }
-      //end simulation
-      $('ul#og-grid li').filter(function(){
-          return (dept == 'all' || $(this).hasClass("dept-"+dept)) &&
-                  (ages == 'all' || $(this).hasClass('age-all') || $(this).hasClass('age-'+ages)) &&
-                  (duration == 'all' || $(this).hasClass('duration-'+duration));
-      }).delay(500).fadeIn();
-      $('body').delay(500).animate( { scrollTop : 0 }, 350 );
+      $('div.course-container').hide(); 
+      $('div.course-container').filter(function(){
+          return (dept == 'all' || $(this).data("dept") == dept) &&
+                  (ages == 'all' || $(this).data('age') == 'a' || $(this).data('age') == ages) &&
+                  (duration == 'all' || $(this).data('duration') == duration);
+      }).delay(10).fadeIn();
+      $('body').delay(10).animate( { scrollTop : 0 }, 350 );
       $('#course-count').fadeOut(500);
-      setTimeout("$('#course-count').html($('.course-tile:visible').size() + ' Course' + ($('.course-tile:visible').size() != 1 ? 's' : '')).fadeIn(500);",1000);
+      setTimeout("$('#course-count').html($('.course-container:visible').size() + ' Course' + ($('.course-container:visible').size() != 1 ? 's' : '')).fadeIn(500);",1000);
       /*
       if (dept == 0) {
         $('ul#og-grid li').fadeIn();
@@ -79,35 +79,27 @@
       }
         */
   };
+
+  function buildFilters(ary){
+    $.each(ary,function(ind,filter){
+      $('nav#'+filter+'-filter a').on('click',function(){setActiveFilter(this, filter);});
+    });
+  }
     $(document).ready(function() {
         console.log("document ready");
-        $('#course-count').html($('.course-tile:visible').size() + ' Courses');
-        $('#filters ul.inline li').on('click',function(){
-           var dept = $(this).data('dept');
+        buildFilters(["age","duration","dept"]);
+
+        $('#course-count').html($('.course-card:visible').size() + ' Courses');
+        $('nav a').on('click',function(){
+           <%# var dept = $(this).data('dept');
            var age = $(this).data('age');
-           var duration = $(this).data('duration');
-           if (!!dept){
-               console.log(dept);
-              $('#discipline-filter li').removeClass("tabon");
-              $('#discipline-filter li.dept-' + dept).addClass("tabon");
-           }
-           if (!!age){
-               $('#age-filter li').removeClass("tabon");
-               $('#age-filter li.age-' + age).addClass("tabon");
-           }
-           if (!!duration) {
-               $("#duration-filter li").removeClass("tabon");
-               $("#duration-filter li.duration-" + duration).addClass('tabon');
-           }
-            filterTiles($("ul#discipline-filter li.tabon").data('dept'),
-                        $("ul#age-filter li.tabon").data('age'),
-                        $("ul#duration-filter li.tabon").data('duration'));
+           var duration = $(this).data('duration'); %>
+           
+           filterTiles($("nav#dept-filter a.mdc-tab--active").data('dept'),
+                        $("nav#age-filter a.mdc-tab--active").data('age'),
+                        $("nav#duration-filter a.mdc-tab--active").data('duration'));
         });
-        Grid().init();
-		//assets/classie.js		
-		//assets/mlpushmenu.js
-	    new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
-		$('.course-stats td').tooltip();
-    $('.tileimg').tooltip();
+        
+
     });
 </script>
