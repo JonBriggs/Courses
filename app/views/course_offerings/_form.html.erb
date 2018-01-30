@@ -12,6 +12,8 @@
   </ul>
   <a href='http://daringfireball.net/projects/markdown/syntax'>Full Markdown Details - note note all of these can be
   supported when moving to a PDF generated system.</a>
+  <br>
+  <%= image_tag @course_offering.course.course_image.url(:tile)%>
 </div>
 <%= form_for(@course_offering) do |f| %>
   <% if @course_offering.errors.any? %>
@@ -25,7 +27,7 @@
       </ul>
     </div>
   <% end %>
-  <h3><%=@course_offering.course.name%> - <%=@course_offering.year.name%></h3>
+  <h3><%=@course_offering.course.name%> - <%=@course_offering.year.name%> (<%=@course_offering.course.sisid%>)</h3>
   <label for='gradelevels'>Grade Levels</label>
   <%= f.text_field :gradelevels %>
     <br />
@@ -38,10 +40,16 @@
   <label for='description'>Description</label>
   <%= f.text_area :description, size: "70x20" %>
   <div class="actions">
+    <%= f.file_field :passed_course_img %>
     <%= f.submit %>
   </div>
 <% end %>
+<div class="mdc-layout-grid"><!--<div id='course-catalog'>-->
+    <div class="mdc-layout-grid__inner">
+
 <div id='preview-card'>
+    </div>
+</div>
 </div>
 <script type='text/javascript'>
   $(document).ready(function(){
@@ -51,3 +59,4 @@
 //      });
   });
 </script>
+       

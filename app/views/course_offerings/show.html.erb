@@ -1,6 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<%=render partial: "catalog/course_card", locals: {course: @course_offering.course, course_offering: @course_offering}%>
+<div class="mdc-layout-grid"><!--<div id='course-catalog'>-->
+    <div class="mdc-layout-grid__inner">
+        
+        <%= render partial: "courses/course", locals: {course: @course_offering.course }%>
+    </div>
+</div>
 
 <%= link_to 'Edit', edit_course_offering_path(@course_offering) %> |
 <%= link_to 'Back', course_offerings_path %>

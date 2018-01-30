@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170906215538) do
+ActiveRecord::Schema.define(version: 20180130220437) do
 
   create_table "#tableau_0_sid_0396899c_4_filter", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.text "none_answer_nk"
@@ -395,6 +395,10 @@ ActiveRecord::Schema.define(version: 20170906215538) do
     t.boolean "archived"
     t.float "credits", limit: 24
     t.integer "sort_tier"
+    t.string "course_image_file_name"
+    t.string "course_image_content_type"
+    t.integer "course_image_file_size"
+    t.datetime "course_image_updated_at"
     t.index ["division_id"], name: "division_id"
     t.index ["division_id"], name: "division_id_2"
     t.index ["graded"], name: "graded"

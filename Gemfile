@@ -34,6 +34,8 @@ end
 
 gem 'redcarpet'
 
+gem 'paperclip'
+
 group :development do
   gem 'listen'
 end

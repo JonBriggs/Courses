@@ -2,6 +2,11 @@ class CourseOffering < ApplicationRecord
   belongs_to :course
   belongs_to :year
   
+  def passed_course_img=(params)
+    self.course.course_image = params
+    self.course.save
+  end
+
   def age_level
     if gradelevels == nil || gradelevels == '' || gradelevels.size == 0
       return "all"
