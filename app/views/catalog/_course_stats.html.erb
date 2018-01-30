@@ -1,9 +1,2 @@
-<table class='course-stats'>
-  <tr>
-    <td data-toggle='tooltip' data-placement='bottom' title='<%= course.credits == 1 ? "This is a single (T)erm course" : course.credits == 0.5 ? "This is a (S)eminar course" : "This course spans the entire (Y)ear" %>'><%= course.credits == 1 ? "T" : course.credits == 0.5 ? "S" : "Y" %></td>
-	<td data-toggle='tooltip' data-placement='bottom' title='This is a  <%=course.credits%> credit course'><%=course.credits%></td>
-  </tr>
-  <tr>
-    <td colspan='2' data-toggle='tooltip' data-placement='bottom' title='This course is typically taken by students in the following grades: <%=(course.current_course_offering.gradelevels)%>'><%=course.current_course_offering.gradelevels %></td>
-  </tr>
-</table>
+
+<span class="class-term"><%= course.credits == 1 ? "Term" : course.credits == 0.5 ? "Sem." : "Year" %> | <%=course.credits%> | <%=course.current_course_offering.gradelevels %></span>
