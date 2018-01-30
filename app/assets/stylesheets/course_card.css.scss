@@ -97,7 +97,7 @@ span.big-name{
   padding-right:5px;
   color: #002b61;
 }
-.course-description {
+/*.course-description {
   color:black;
   width:80%;
   margin-left:auto;
@@ -112,7 +112,7 @@ span.big-name{
   overflow-x:hidden;
   padding-bottom: 20px;
   padding-right: 20px;
-}
+}*/
 
 .course-prereqs.dept-1 {background-color:#c50702;}
 .course-prereqs.dept-2 {background-color:#9ec3df;}
@@ -153,4 +153,19 @@ span.big-name{
 }
 .mdc-card__primary .mdc-card__title--large {
   padding-top: 0px;
+}
+.mdc-dialog__header__title {
+  font-size: 24px;
+}
+.course-prereqs {
+  font-size: 20px;
+  padding:5px;
+  text-align: center
+}
+.course-description {
+  font-size: 18px;
+}
+.mdc-button:not(:disabled) {
+  color: #ffffff;
+  background-color: #111111;
 }
