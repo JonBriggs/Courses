@@ -1,13 +1,12 @@
-<span class='dept-<%=course.department_id%> age-<%=course.current_course_offering.age_level%> duration-<%= course.credits == 1 ? "T" : course.credits == 0.5 ? "S" : "Y" %>'>
+<span data-dept='<%=course.department_id%>' data-age='<%=course.current_course_offering.age_level%>' data-duration='<%= course.credits == 1 ? "T" : course.credits == 0.5 ? "S" : "Y" %>'>
 <div style="text-decoration: none;"
-   id='course_<%=course.id%>'
    class='course dept-<%=course.department_id%>'
 >
-<!-- PULLING A TAG FOR BUTTON UNTIL WE CAN GET THIS TO WORK-->
-  <div class="course-card"><!-- class='course-tile'-->
+
+  <div id='course_<%=course.id%>' class="course-card"><!-- class='course-tile'-->
     <%= render partial: "course_tile", locals: {course:course} %>
   </div>
-  
+
   <div class='course-info'>
     <%= render partial: "course_card", locals: {course: course} %>
   </div>
