@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
-
+#rubyr= '2.4.1'
+#ruby-gemset='org-eastsideprep-courses'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.1.4'
 

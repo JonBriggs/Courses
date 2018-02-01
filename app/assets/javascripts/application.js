@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require modernizr.custom
+//= require material-components-web/dist/material-components-web
 
 var addClassDialog = function(classid) {
   var dialog = new mdc.dialog.MDCDialog(document.querySelector('#course_pop_' + classid));

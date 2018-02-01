@@ -96,7 +96,7 @@
   </section>
 </div>
 
-
+<h2 style='padding-left: 200px' id='preview-warning'>Preview</h2>
 <div class="mdc-layout-grid">
   <div class="mdc-layout-grid__inner">
     <div id='preview-card'></div>
@@ -104,10 +104,24 @@
 </div>
 
 <script type='text/javascript'>
+  function descriptionChange(el){
+     $('#preview-warning').html("UNSAVED Preview");
+     $.ajax({type: "POST", url: "/course_offerings/markdown_preview", data: {body: encodeURIComponent($(el).val())}, success: function(d){$('.course-description').html(d);}})}
+
+  function infoChange(el){
+     $('#preview-warning').html("UNSAVED Preview");
+    $('.course-prereqs').html($(el).val());
+  }
+  function gradelevelsChange(el){
+     $('#preview-warning').html("UNSAVED Preview");
+    var old = $('.class-term').html().split(" | ");
+    $('.class-term').html(old[0] + " | " + old[1] + " | " + $(el).val());
+  }
+
   $(document).ready(function(){
-//      $('#preview-card').html("<%=escape_javascript(render partial: "catalog/course_card", locals: {course: @course_offering.course, course_offering: @course_offering})%>")
-//      $('#course-offering-description').keyup(function(){
                   $('#preview-card').html("<%=escape_javascript(render partial: "catalog/course_card", locals: {course: @course_offering.course, course_offering: @course_offering, adl_class: "mdc-dialog--open render-dialog-inline"})%>")
-//      });
+                  $('#course_offering_description').on('keyup',function(){descriptionChange(this);});
+                  $('#course_offering_info').on('keyup',function(){infoChange(this);});
+                  $('#course_offering_gradelevels').on('keyup',function(){gradelevelsChange(this);});
   });
 </script>

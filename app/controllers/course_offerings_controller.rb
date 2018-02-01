@@ -3,6 +3,12 @@ class CourseOfferingsController < ApplicationController
   http_basic_authenticate_with name: "eps", password: (ENV["COURSESPWD"] ? ENV["COURSESPWD"] : 'changeme')
   # GET /course_offerings
   # GET /course_offerings.json
+
+  def markdown_preview
+    @text = URI.unescape(params[:body])
+    render layout: nil
+  end
+
   def index
     set_working_year
     @course_offerings = CourseOffering.joins(:course).where("year_id = ?",@year).order('courses.department_id,sort_order').all
