@@ -4,22 +4,6 @@
         <div class="mdc-layout-grid" style="margin:0px; padding:0px;">
           <div class="mdc-layout-grid__inner">
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
-              <h3>Markdown Basics</h3>
-                <ul>
-                  <li>*single asterisks* = <em>single asterisks</em></li>
-                  <li>_single underscores_ = <em>single underscores</em></li>
-                  <li>**double asterisks** = <strong>double asterisks</strong></li>
-                  <li>__double underscores__ = <strong>double underscores</strong></li>
-                  <li>_**both**_ = <em><strong>both</strong></em></li>
-                  <li>New line (not new paragraph) end line with a double space </li>
-                  <li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#wiki-lines">Bigger Reference</a></li>
-                </ul>
-                <a href='http://daringfireball.net/projects/markdown/syntax'>Full Markdown Details - note note all of these can be
-                supported when moving to a PDF generated system.</a>
-                <br>
-                <%= image_tag @course_offering.course.course_image.url(:preview)%>
-            </div>
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
               <%= form_for(@course_offering) do |f| %>
                 <% if @course_offering.errors.any? %>
                   <div id="error_explanation">
@@ -32,23 +16,79 @@
                     </ul>
                   </div>
                 <% end %>
-                <h3><%=@course_offering.course.name%> - <%=@course_offering.year.name%> (<%=@course_offering.course.sisid%>)</h3>
-                <label for='gradelevels'>Grade Levels</label>
-                <%= f.text_field :gradelevels %>
-                  <br />
-                <label for='sort_order'>Sort Order</label>
-                <%= f.text_field :sort_order %>
-                  <br />
-                  <label for='info'>Prereqs/additional info</label>
-                <%= f.text_field :info, size: 100 %>
-                  <br />
-                <label for='description'>Description</label>
-                <%= f.text_area :description, size: "70x20" %>
-                <div class="actions">
-                  <%= f.file_field :passed_course_img %>
-                  <%= f.submit %>
+                <div class="mdc-card form-card">
+                  <section class="mdc-card__secondary">
+                    <h2>Edit Course</h2>
+                    <div class="mdc-layout-grid" style="margin:0px; padding:0px;">
+                      <div class="mdc-layout-grid__inner">
+                        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+                          <h3>Grade Levels</h3>
+                          <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--upgraded mdc-text-field--dense">
+                            <%= f.text_field :gradelevels, size: 10, class: "mdc-text-field__input"%>
+                            <label class="mdc-text-field__label" for='gradelevels'></label>
+                            <div class="mdc-text-field__idle-outline"></div>
+                          </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+                          <h3>Sort Order</h3>
+                          <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--upgraded mdc-text-field--dense">
+                            <%= f.text_field :sort_order, size: 10, class: "mdc-text-field__input" %>
+                            <label class="mdc-text-field__label" for='sort_order'></label>
+                            <div class="mdc-text-field__idle-outline"></div>
+                          </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8">
+                          <h3>Prereqs/Additional Info</h3>
+                          <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--upgraded mdc-text-field--dense">
+                            <label class="mdc-text-field__label" for='info'></label>
+                            <%= f.text_field :info, size: 100, class: "mdc-text-field__input" %>
+                            <div class="mdc-text-field__idle-outline"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <h3>Description</h3>
+                    <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--outlined mdc-text-field--upgrade">
+                      <%= f.text_area :description, size: "100x12", class: "mdc-text-field__input" %>
+                      <label class="mdc-text-field__label" for='description'></label>
+                      <div class="mdc-text-field__idle-outline"></div>
+                    </div>
+                    <br>
+                    <div class="actions">
+                      <%= f.file_field :passed_course_img %>
+                      <%= f.submit %>
+                    </div>
+                  </section>
                 </div>
               <% end %>
+            </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
+              <div class="mdc-card form-card">
+                <section class="mdc-card__secondary">
+                  <div class="mdc-layout-grid" style="margin:0px; padding:0px;">
+                    <div class="mdc-layout-grid__inner">
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9">
+                        <h2>Markdown Basics</h2>
+                        <ul>
+                          <li>*single asterisks* = <em>single asterisks</em></li>
+                          <li>_single underscores_ = <em>single underscores</em></li>
+                          <li>**double asterisks** = <strong>double asterisks</strong></li>
+                          <li>__double underscores__ = <strong>double underscores</strong></li>
+                          <li>_**both**_ = <em><strong>both</strong></em></li>
+                          <li>New line (not new paragraph) end line with a double space </li>
+                          <li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#wiki-lines">Bigger Reference</a></li>
+                        </ul>
+                        <a href='http://daringfireball.net/projects/markdown/syntax'>Full Markdown Details - note note all of these can be
+                        supported when moving to a PDF generated system.</a>
+                      </div>
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">
+                        <h2>Image Preview</h2>
+                        <%= image_tag @course_offering.course.course_image.url(:preview)%>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
             </div>
           </div>
         </div>
@@ -56,7 +96,8 @@
   </section>
 </div>
 
-<div class="mdc-layout-grid"><!--<div id='course-catalog'>-->
+
+<div class="mdc-layout-grid">
   <div class="mdc-layout-grid__inner">
     <div id='preview-card'></div>
   </div>
@@ -70,4 +111,3 @@
 //      });
   });
 </script>
-       

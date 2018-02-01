@@ -29,3 +29,16 @@
 .form-info-card .mdc-card__primary {
     background-color: #ccc;
 }
+.form-info-card h3 {
+    margin: 5px 0px 0px 0px;
+}
+.form-card {
+    background-color: white;
+    padding: 0px 30px 30px;
+}
+.mdc-text-field__input--theme-dark, .mdc-theme--dark .mdc-text-field__input {
+    color: black;
+}
+.mdc-text-field--outlined:not(.mdc-text-field--upgraded) {
+    height: unset;
+}
