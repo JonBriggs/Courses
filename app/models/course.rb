@@ -1,7 +1,7 @@
 class Course < ApplicationRecord
   has_many :course_offerings
   belongs_to :department
-  has_attached_file :course_image, styles: {tile: "800x450>", thumb: '32x32#'}, default_url: "/images/:style/missing.jpg"
+  has_attached_file :course_image, styles: {tile: "800x450>", thumb: '32x32#', preview: '150x150#'}, default_url: "/images/:style/missing.jpg"
   validates_attachment_content_type :course_image, :content_type => /^image\/(png|gif|jpeg)/, :message => 'only (png/gif/jpeg) images'
   #has_one :current_course_offering, -> {CourseOffering.current_course_offering}
 

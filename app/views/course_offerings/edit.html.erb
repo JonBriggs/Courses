@@ -1,6 +1,18 @@
-<h1>Editing course_offering</h1>
+<div class="mdc-card edit-title-card">
+  <section class="mdc-card__primary">
+    <div style="padding: 0 10px;">
+        <div class="mdc-layout-grid" style="margin:0px; padding:0px;">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
+              <h1 class="mdc-card__title mdc-card__title--large">Editing Course</h1>
+            </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6" style="text-align:right;">
+              <h2 class="mdc-card__subtitle"><%= link_to '<button class="mdc-button mdc-button--raised mdc-button--compact">Preview</button>'.html_safe, @course_offering %> <%= link_to '<button type="button" class="mdc-button mdc-button--raised mdc-button--compact">Back</button>'.html_safe, course_offerings_path %></h2>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+</div>
 
 <%= render 'form'%>
-
-<%= link_to 'Show', @course_offering %> |
-<%= link_to 'Back', course_offerings_path %>

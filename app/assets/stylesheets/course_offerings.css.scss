@@ -1,3 +1,31 @@
 // Place all the styles related to the course_offerings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.edit-title-card h1 {
+    font-size: 28px;
+}
+.edit-title-card .mdc-card__title--large {
+    padding-top: 8px;
+}
+.edit-title-card .mdc-button {
+    background-color: white;
+    color: black;
+}
+.edit-title-card a {
+    color: black;
+    text-decoration: none;
+}
+
+.render-dialog-inline {
+    z-index: auto;
+    position: absolute;
+    align-items: unset;
+    top: unset;
+    left: unset;
+    justify-content: unset;
+}
+.form-info-card {
+}
+.form-info-card .mdc-card__primary {
+    background-color: #ccc;
+}
