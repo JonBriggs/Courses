@@ -1,36 +1,52 @@
-<h1>_</h1>
-<h1>Listing course_offerings for <%=@course_offerings[0].year.name%></h1>
+<div class="mdc-card edit-title-card">
+  <section class="mdc-card__primary">
+    <div style="padding: 0 10px;">
+      <h1 class="mdc-card__title mdc-card__title--large">Course Listings for <%=@course_offerings[0].year.name%></h1>
+    </div>
+  </section>
+</div>
+<div class="mdc-card form-info-card">
+  <section class="mdc-card__primary">
+    <div style="padding: 0 10px;">
+      <div class="mdc-card form-card">
+        <section class="mdc-card__secondary">
+          <table class="mdl-data-table" style="margin:0 auto;">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Department</th>
+                <th>Course</th>
+                <th>Term</th>
+                <th>Gradelevels</th>
+                <th>Sort Order</th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Department</th>
-      <th>Course</th>
-      <th>Term</th>
-      <th>Gradelevels</th>
-      <th>Sort Order</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+            <tbody>
+              <% @course_offerings.each do |course_offering| %>
+                <tr>
+                  <td><%= image_tag course_offering.course.course_image.url(:thumb)%></td>
+                  <td><%=course_offering.description == nil || course_offering.description.size < 200 ? "!!!" : ""%><%=(course_offering.course.department ? course_offering.course.department.name : course_offering.course.department_id)%></td>
+                  <td><%=course_offering.course.name%></td>
+                  <td><%=course_offering.course.term_id%></td>
+                  <td><%=course_offering.gradelevels%></td>
+                  <td><%=course_offering.sort_order%></td>
+                  <td><%= link_to 'Show', course_offering %></td>
+                  <td><%= link_to 'Edit', edit_course_offering_path(course_offering) %></td>
+                  <td><%= link_to 'Destroy', course_offering, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
 
-  <tbody>
-    <% @course_offerings.each do |course_offering| %>
-      <tr>
-        <td><%=course_offering.description == nil || course_offering.description.size < 200 ? "!!!" : ""%><%=(course_offering.course.department ? course_offering.course.department.name : course_offering.course.department_id)%></td>
-        <td><%=course_offering.course.name%></td>
-        <td><%=course_offering.course.term_id%></td>
-        <td><%=course_offering.gradelevels%></td>
-        <td><%=course_offering.sort_order%></td>
-        <td><%= link_to 'Show', course_offering %></td>
-        <td><%= link_to 'Edit', edit_course_offering_path(course_offering) %></td>
-        <td><%= link_to 'Destroy', course_offering, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <br>
 
-<br>
-
-<%= link_to 'New Course offering', new_course_offering_path %>
+          <%= link_to 'New Course offering', new_course_offering_path %>
+        </section>
+      </div>
+    </div>
+  </section>
+</div>
