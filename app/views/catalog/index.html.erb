@@ -5,36 +5,43 @@
     </a>
   </div>-->
   <!--span id='year'><%= @year.name %> Courses</span-->
-  <nav id="age-filter" class="mdc-tab-bar courses-bar"><!-- *****   NEED TO ACCOUNT FOR id="age-filter"   ***** -->
-    <span class='mdc-typography--headline courses-headers'>Grade Level</span>
-    <a data-age='all' class="mdc-tab mdc-tab--active age-all">5<sup>th</sup>-12<sup>th</sup></a>
-    <a class='mdc-tab age-ms' data-age='ms'>Middle School</a>
-    <a class='mdc-tab age-us' data-age='us'>Upper School</a>
-  </nav>
-  <nav id="duration-filter" class="mdc-tab-bar courses-bar"><!--  ******  NEED TO ACCOUNT FOR id="duration-filter   ***** -->
-    <span class='mdc-typography--headline'>Duration</span>
-    <a data-duration="all" class="mdc-tab mdc-tab--active duration-all">All Lengths</a>
-    <a class='mdc-tab duration-T' data-duration='T'>Trimester</a>
-    <a class='mdc-tab duration-Y' data-duration='Y'>Year</a>
-    <a class='mdc-tab duration-S' data-duration='S'>Seminar</a>
-  </nav>
-  <br>
-  <nav id="dept-filter" class="mdc-tab-bar courses-bar"><!-- ******   NEED TO ACCOUNT FOR id="discipline-filter"   ****** -->
-    <span class='mdc-typography--headline courses-headers'>Disciplines</span>
-    <% subj = ["English","History/Social Sci.","Math","Science","Spanish","Arts","P.E."] %>
-    <a data-dept='all' class="mdc-tab mdc-tab--active dept-all">All</a>
-    <% 7.times do |i| %>
-      <a class='mdc-tab dept-<%=i+1%>'  data-dept='<%=i+1%>'>
-      <%= subj[i] %>
-    </a>
-    <% end %>
-    <a class='mdc-tab dept-10' data-dept='10'>Tech</a>
-    <a class='mdc-tab dept-8' data-dept='8'>Interdisciplinary</a>
-    <a class='mdc-tab dept-11' data-dept='11'>Seminars</a>
-    <span class="mdc-tab-bar__indicator"></span>
-  </nav>
+  <div class="mdc-layout-grid" style="margin:0px; padding:0px;">
+    <div class="mdc-layout-grid__inner">
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-2-phone nav-col-1">
+        <nav id="age-filter" class="mdc-tab-bar courses-bar"><!-- *****   NEED TO ACCOUNT FOR id="age-filter"   ***** -->
+          <span class='mdc-typography--headline courses-headers'>Grade Level</span>
+          <a data-age='all' class="mdc-tab mdc-tab--active age-all">5<sup>th</sup>-12<sup>th</sup></a>
+          <a class='mdc-tab age-ms' data-age='ms'>Middle School</a>
+          <a class='mdc-tab age-us' data-age='us'>Upper School</a>
+        </nav>
+        <nav id="duration-filter" class="mdc-tab-bar courses-bar"><!--  ******  NEED TO ACCOUNT FOR id="duration-filter   ***** -->
+          <span class='mdc-typography--headline'>Duration</span>
+          <a data-duration="all" class="mdc-tab mdc-tab--active duration-all">All Lengths</a>
+          <a class='mdc-tab duration-T' data-duration='T'>Trimester</a>
+          <a class='mdc-tab duration-Y' data-duration='Y'>Year</a>
+          <a class='mdc-tab duration-S' data-duration='S'>Seminar</a>
+        </nav>
+      </div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-2-phone">
+        <nav id="dept-filter" class="mdc-tab-bar courses-bar"><!-- ******   NEED TO ACCOUNT FOR id="discipline-filter"   ****** -->
+          <span class='mdc-typography--headline courses-headers'>Disciplines</span>
+          <% subj = ["English","History/Social Sci.","Math","Science","Spanish","Arts","P.E."] %>
+          <a data-dept='all' class="mdc-tab mdc-tab--active dept-all">All</a>
+          <% 7.times do |i| %>
+            <a class='mdc-tab dept-<%=i+1%>'  data-dept='<%=i+1%>'>
+            <%= subj[i] %>
+          </a>
+          <% end %>
+          <a class='mdc-tab dept-10' data-dept='10'>Tech</a>
+          <a class='mdc-tab dept-8' data-dept='8'>Interdisciplinary</a>
+          <a class='mdc-tab dept-11' data-dept='11'>Seminars</a>
+          <span class="mdc-tab-bar__indicator"></span>
+        </nav>
   <div id='course-filter-stats'>
     Showing <span id='course-count'>... Courses</span>
+  </div>
+      </div>
+    </div>
   </div>
 </div>
 <!-- Push Wrapper -->

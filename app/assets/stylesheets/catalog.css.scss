@@ -406,3 +406,35 @@ background-color:#002b61;
     border-bottom: 1px #eeb111 solid;
 }
 
+
+.logo-h1 {
+  color:#fff; 
+  font-size:32px; 
+  font-family: 'Cinzel', serif; 
+  font-weight:normal; 
+  letter-spacing:.5px; 
+  margin:0px;
+}
+.logo-h1 span {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+}
+.logo-h3 {
+  color:#fff; 
+  font-family: 'Cinzel', serif; 
+  font-weight:normal; 
+  letter-spacing:.5px; 
+  margin:0px;
+}
+// Responsive //
+@media (max-width: 767px) {
+  .logo-h1 {
+    font-size: 25px;
+  }
+  .nav-col-1 {
+    margin-left: 15px;
+  }
+  .courses-headers {
+    margin-left: 0px;
+  }
+}

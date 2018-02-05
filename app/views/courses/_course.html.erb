@@ -1,5 +1,5 @@
 <!--start-->
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3 course-container" data-dept='<%=course.department_id%>' data-age='<%=course.current_course_offering.age_level%>' data-duration='<%= course.credits == 1 ? "T" : course.credits == 0.5 ? "S" : "Y" %>'>
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-2-phone course-container" data-dept='<%=course.department_id%>' data-age='<%=course.current_course_offering.age_level%>' data-duration='<%= course.credits == 1 ? "T" : course.credits == 0.5 ? "S" : "Y" %>'>
 <div style="text-decoration: none;"
    class='course dept-<%=course.department_id%>'
 >
