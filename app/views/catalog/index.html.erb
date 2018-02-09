@@ -25,7 +25,7 @@
       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-2-phone">
         <nav id="dept-filter" class="mdc-tab-bar courses-bar"><!-- ******   NEED TO ACCOUNT FOR id="discipline-filter"   ****** -->
           <span class='mdc-typography--headline courses-headers'>Disciplines</span>
-          <% subj = ["English","History/Social Sci.","Math","Science","Spanish","Arts","P.E."] %>
+          <% subj = ["English","Social Sci.","Math","Science","Spanish","Arts","P.E."] %>
           <a data-dept='all' class="mdc-tab mdc-tab--active dept-all">All</a>
           <% 7.times do |i| %>
             <a class='mdc-tab dept-<%=i+1%>'  data-dept='<%=i+1%>'>
