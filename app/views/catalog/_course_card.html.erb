@@ -19,7 +19,7 @@
           <h2 class="mdc-card__title mdc-card__title--large"><%=course.name%></h2>
         </section>
       </div>
-      <div class='course-prereqs dept-<%=course.department_id%>'>
+      <div class='course-prereqs dept-all'>
         <%= render partial: "catalog/course_prereqs", locals: {course: course, course_offering: course.current_course_offering} %>
       </div>
       <div class='course-description'>
