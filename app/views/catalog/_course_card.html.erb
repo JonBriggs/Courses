@@ -5,17 +5,19 @@
   aria-labelledby="my-mdc-dialog-label"
   aria-describedby="my-mdc-dialog-description">
   <div class="mdc-dialog__surface">
-    <header class="mdc-dialog__header">
-      <h2 id="my-mdc-dialog-label" class="mdc-dialog__header__title">
-        <%=course.name%>
-      </h2>
-    </header>
     <section id="my-mdc-dialog-description" class="mdc-dialog__body">
-      <div class="mdc-layout-grid dep-term-grid">
-        <div class="mdc-layout-grid__inner">
-          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3"><span class="dep-img" style="color: #eeb111 !important; letter-spacing:.5px;"><%=course.department.name%></span><!--<%= image_tag('thumbs/'+course.department_id.to_s+'.png', class: 'tileimg', title: course.department.name, data: {toggle: 'tooltip', placement: 'top'}) %>--></div>
-          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9" style="text-align:right;"><%= render partial: "catalog/course_stats", locals: {course: course, course_offering: course.current_course_offering} %></div>
-        </div>
+      <div class="mdc-card mdc-card__media card__dialog" style="background: url('<%= course.course_image.url(:tile)%>') no-repeat center center fixed; background-size: cover;">
+        <section class="mdc-card__actions">
+          <div class="mdc-layout-grid dep-term-grid">
+            <div class="mdc-layout-grid__inner">
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3"><span class="dep-img" style="color: #eeb111 !important; letter-spacing:.5px;"><%=course.department.name%></span></div>
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9" style="text-align:right;"><%= render partial: "catalog/course_stats", locals: {course: course, course_offering: course.current_course_offering} %></div>
+            </div>
+          </div>
+        </section>
+        <section class="mdc-card__primary">
+          <h2 class="mdc-card__title mdc-card__title--large"><%=course.name%></h2>
+        </section>
       </div>
       <div class='course-prereqs dept-<%=course.department_id%>'>
         <%= render partial: "catalog/course_prereqs", locals: {course: course, course_offering: course.current_course_offering} %>
