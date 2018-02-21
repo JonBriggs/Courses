@@ -17,13 +17,16 @@ namespace :annual_import do
           #co.grade_level_ids = last_course_offering.grade_level_ids
           co.description = last_course_offering.description
           co.grade_level_ids = last_course_offering.grade_level_ids
+          co.gradelevels = last_course_offering.gradelevels
           co.info = last_course_offering.info
           co.sort_order = last_course_offering.sort_order
           co.gradelevels = last_course_offering.gradelevels
         elsif course.cat_entry
           co.description = course.cat_entry
+          co.gradelevels = course.gradelevels
         else
           co.description = course.description
+          co.gradelevels = course.gradelevels
         end
         co.save
       end

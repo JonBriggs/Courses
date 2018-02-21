@@ -28,9 +28,10 @@
 
             <tbody>
               <% @course_offerings.each do |course_offering| %>
-                <tr>
+                <% warning = course_offering.description == nil || course_offering.description.size < 200 || course_offering.gradelevels.size < 1 %>
+                <tr<%= warning ? " class=warning" : "" %>>
                   <td><%= image_tag course_offering.course.course_image.url(:thumb)%></td>
-                  <td><%=course_offering.description == nil || course_offering.description.size < 200 ? "!!!" : ""%><%=(course_offering.course.department ? course_offering.course.department.name : course_offering.course.department_id)%></td>
+                  <td><%= warning ? "!!!" : ""%><%=(course_offering.course.department ? course_offering.course.department.name : course_offering.course.department_id)%></td>
                   <td><%=course_offering.course.name%></td>
                   <td><%=course_offering.course.sisid%></td>
                   <td><%=course_offering.course.term_id%></td>
