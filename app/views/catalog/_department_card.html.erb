@@ -1,0 +1,35 @@
+<% adl_class ||= ""%>
+<aside id="department_pop_<%=department.id%>"
+  class="mdc-dialog <%=adl_class%>"
+  role="alertdialog"
+  aria-labelledby="my-mdc-dialog-label"
+  aria-describedby="my-mdc-dialog-description">
+  <div class="mdc-dialog__surface">
+    <section id="my-mdc-dialog-description" class="mdc-dialog__body">
+      <div class="mdc-card mdc-card__media card__dialog") no-repeat center center fixed; background-size: cover;">
+        <section class="mdc-card__actions">
+          <div class="mdc-layout-grid dep-term-grid">
+            <div class="mdc-layout-grid__inner">
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3"><span class="dep-img" style="color: #eeb111 !important; letter-spacing:.5px;"><%=department.name%></span></div>
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9" style="text-align:right;"><%# render partial: "catalog/course_stats", locals: {course: course, course_offering: department_card} 
+                %></div>
+            </div>
+          </div>
+        </section>
+        <section class="mdc-card__primary">
+          <h2 class="mdc-card__title mdc-card__title--large"><%=department.name%></h2>
+        </section>
+      </div>
+      <div class='course-prereqs dept-all'>
+        <%= render partial: "catalog/course_prereqs", locals: {course: department, course_offering: department_card} %>
+      </div>
+      <div class='course-description'>
+        <%=render department_card%>
+      </div>
+    </section>
+    <footer class="mdc-dialog__footer">
+      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Close</button>
+    </footer>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside>

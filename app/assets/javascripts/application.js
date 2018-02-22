@@ -28,3 +28,16 @@ var addClassDialog = function(classid) {
   dialog.show();
 })
 }
+
+var addDepartmentDialog = function(depid) {
+  var dialog = new mdc.dialog.MDCDialog(document.querySelector('#department_pop_' + depid));
+
+  dialog.listen('MDCDialog:cancel', function() {
+    console.log('canceled');
+  })
+
+  document.querySelector('#department_' + depid).addEventListener('click', function (evt) {
+  dialog.lastFocusedTarget = evt.target;
+  dialog.show();
+})
+}

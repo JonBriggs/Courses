@@ -2,5 +2,5 @@
 <% if short %>
   <span class="class-term"><%= course.credits == 1 ? "Trimester" : course.credits == 0.5 ? "Seminar" : "Yearlong" %> | <%=course.current_course_offering.gradelevels %><sup>th</sup></span>
 <% else %>
-  <span class="class-term"><%= course.credits == 1 ? "Trimester" : course.credits == 0.5 ? "Sem." : "Year" %> | <%=course.credits%> Credit<%= course.credits == "1.0" ? "" : "s" %> | <%=course.current_course_offering.gradelevels %><sup>th</sup></span>
+  <span class="class-term"><%= course.credits == 1 ? "Trimester" : course.credits == 0.5 ? "Sem." : "Yearlong" %> | <%=course.credits%> Credit<%= course.credits == "1.0" ? "" : "s" %> | <%=course.current_course_offering.gradelevels %><sup>th</sup></span>
 <% end %>

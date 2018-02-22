@@ -49,7 +49,12 @@
 <!-- render partial: "menu" This was the discipline description menu -->
 <div class="mdc-layout-grid"><!--<div id='course-catalog'>-->
   <div class="mdc-layout-grid__inner">
+  <% current_dept_id = 0 %>
 	<% @courses.each do |course| %>
+      <% if course.department_id != current_dept_id %>
+        <%=department_card_for(course.department_id)%>
+        <% current_dept_id = course.department_id %>
+      <% end %>
     <% begin %>
 	  	<%= render course %>
     <% rescue %>

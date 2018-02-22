@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180130220437) do
+ActiveRecord::Schema.define(version: 20180222223710) do
 
   create_table "#tableau_0_sid_0396899c_4_filter", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.text "none_answer_nk"
@@ -74,19 +74,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.timestamp "updated_on", null: false
   end
 
-  create_table "admins", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "client_id"
-    t.string "client_pw"
-    t.string "client_school"
-    t.date "client_expdate"
-    t.string "client_fullname"
-    t.text "webinfo"
-    t.date "webinfodate"
-    t.datetime "LastUpdate"
-    t.string "user_activation_key"
-    t.string "user_email"
-  end
-
   create_table "advisors", id: :integer, limit: 3, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci" do |t|
     t.integer "student_id", limit: 3
     t.integer "teacher_id", limit: 3
@@ -110,42 +97,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.text "answer"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "applicant_datas", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer "applicant_id"
-    t.integer "year_id"
-    t.integer "school_id"
-    t.string "notes"
-    t.boolean "application_form_in"
-    t.boolean "application_fee_in"
-    t.boolean "parent_questionaire_in"
-    t.float "parent_questionaire_rating", limit: 24
-    t.boolean "student_questionaire_in"
-    t.float "student_questionaire_rating", limit: 24
-    t.boolean "personal_reference_in"
-    t.float "personal_reference_rating", limit: 24
-    t.boolean "record_request_form_in"
-    t.boolean "grades_current_year_in"
-    t.float "grades_rating", limit: 24
-    t.boolean "grades_two_years_in"
-    t.integer "isee_test_results_math"
-    t.integer "isee_test_results_english"
-    t.float "isee_rating", limit: 24
-    t.float "teacher_evals_rating", limit: 24
-    t.boolean "test_results_in"
-    t.date "visit_on"
-    t.integer "host_id"
-    t.date "parent_interview_on"
-    t.float "parent_interview_rating", limit: 24
-    t.float "student_interview_rating", limit: 24
-    t.integer "student_interviewer_id"
-    t.integer "parent_interviewer_id"
-    t.date "sent_initial_receipt_letter_on"
-    t.date "sent_application_complete_letter_on"
-    t.date "sent_decision_letter_on"
-    t.integer "reason_for_attending_elsewhere_id"
-    t.integer "how_did_you_hear_about_eps_id"
   end
 
   create_table "assessment_responses", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -328,11 +279,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.datetime "updated_at"
   end
 
-  create_table "check_boxes", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "checklists", id: :integer, limit: 3, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci" do |t|
     t.integer "student_id", limit: 3, default: 0, null: false
     t.integer "section_id", limit: 3, default: 0, null: false
@@ -371,14 +317,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.index ["year_id"], name: "year_id"
   end
 
-  create_table "classnotes", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "client_id"
-    t.string "cc"
-    t.string "schoolid"
-    t.text "notes"
-    t.datetime "lastupdate"
-  end
-
   create_table "comment_summaries", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer "student_id"
     t.integer "term_id"
@@ -401,30 +339,8 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.index ["year_id"], name: "year_id"
   end
 
-  create_table "commentlist", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "schoolid"
-    t.integer "commentnum"
-    t.text "commenttxt"
-    t.datetime "LastUpdate"
-  end
-
   create_table "companies", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci" do |t|
     t.string "name", limit: 120, default: "", null: false
-  end
-
-  create_table "config", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "name"
-    t.text "value"
-  end
-
-  create_table "consumer_tokens", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer "user_id"
-    t.string "type", limit: 30
-    t.string "token", limit: 1024
-    t.string "secret"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["token"], name: "index_consumer_tokens_on_token", length: { token: 767 }
   end
 
   create_table "contacts", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -456,25 +372,7 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.integer "sort_order"
     t.string "info"
     t.string "gradelevels"
-  end
-
-  create_table "courseinfo", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "cc"
-    t.string "schoolid"
-    t.string "facultyname"
-    t.string "facultycode"
-    t.string "period"
-    t.string "email"
-    t.string "phone"
-    t.string "misc"
-    t.string "coursename"
-    t.text "assignlist"
-    t.text "assignvals"
-    t.text "assigndates"
-    t.text "ealr"
-    t.string "modified"
-    t.string "type"
-    t.datetime "LastUpdate"
+    t.integer "department_card_id"
   end
 
   create_table "courses", id: :integer, limit: 3, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci" do |t|
@@ -567,11 +465,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.string "short_name"
   end
 
-  create_table "drop_downs", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "enrollments", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer "student_id", limit: 3, unsigned: true
     t.integer "section_id", limit: 3, unsigned: true
@@ -582,14 +475,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.index ["section_id"], name: "section_id"
     t.index ["student_id"], name: "student_id"
     t.index ["year_id"], name: "year_id"
-  end
-
-  create_table "eventlog", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "eventid"
-    t.string "schoolid"
-    t.string "user"
-    t.string "ipaddr"
-    t.datetime "LastUpdate"
   end
 
   create_table "expectations", id: :integer, limit: 2, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci" do |t|
@@ -704,17 +589,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.datetime "updated_at"
   end
 
-  create_table "gmscores", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer "sid"
-    t.string "cc"
-    t.string "schoolid"
-    t.text "scores"
-    t.float "percent", limit: 24
-    t.string "grade"
-    t.string "comments"
-    t.datetime "LastUpdate"
-  end
-
   create_table "grade_levels", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "name"
     t.string "short_name"
@@ -737,17 +611,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
   create_table "grades", id: :integer, limit: 2, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci" do |t|
     t.string "grade", limit: 2, collation: "latin1_swedish_ci"
     t.float "gpa", limit: 24
-  end
-
-  create_table "gri", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer "group_id"
-    t.integer "individual_id"
-    t.integer "relationship_id"
-    t.integer "year_id"
-    t.string "type", limit: 30
-    t.index ["group_id", "relationship_id", "year_id", "individual_id"], name: "group_id_2", unique: true
-    t.index ["group_id", "relationship_id", "year_id", "individual_id"], name: "group_id_3", unique: true
-    t.index ["group_id", "relationship_id", "year_id", "type", "individual_id"], name: "group_id", unique: true
   end
 
   create_table "groups", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -1038,12 +901,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.datetime "updated_at"
   end
 
-  create_table "multiple_choice_answers", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.text "answer_text"
-    t.integer "question_id"
-    t.string "letter", limit: 2
-  end
-
   create_table "notes", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "subject"
     t.text "body"
@@ -1056,23 +913,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.boolean "teacher_viewable", default: true
     t.index ["notation_id"], name: "notation_id"
     t.index ["notation_type"], name: "notation_type"
-  end
-
-  create_table "old_enrollments", id: :integer, limit: 3, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci" do |t|
-    t.integer "student_id", limit: 3, unsigned: true
-    t.integer "section_id", limit: 3, unsigned: true
-    t.integer "year_id", limit: 1
-    t.index ["section_id"], name: "section_id"
-    t.index ["section_id"], name: "section_id_2"
-    t.index ["student_id"], name: "student_id"
-    t.index ["student_id"], name: "student_id_2"
-    t.index ["year_id"], name: "year_id"
-    t.index ["year_id"], name: "year_id_2"
-  end
-
-  create_table "one_to_fives", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "pathways", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -1091,51 +931,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.integer "position"
     t.index ["ms_period"], name: "ms_period"
     t.index ["us_period"], name: "us_period"
-  end
-
-  create_table "portal_syncs", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "IDFAMILY"
-    t.string "Pa_prefix"
-    t.string "Pa_first"
-    t.string "Pa_middle"
-    t.string "Pa_last"
-    t.string "Pa_suffix"
-    t.string "Pb_prefix"
-    t.string "Pb_first"
-    t.string "Pb_middle"
-    t.string "Pb_last"
-    t.string "Pb_suffix"
-    t.string "P_phone_H"
-    t.string "Pa_phone_W"
-    t.string "Pb_phone_W"
-    t.string "Pa_phone_cell"
-    t.string "Pb_phone_cell"
-    t.string "Pa_email"
-    t.string "Pb_email"
-    t.string "Pub_Pa_email"
-    t.string "Pub_Pb_email"
-    t.string "Pa_occupation"
-    t.string "Pb_occupation"
-    t.string "Pa_business_name"
-    t.string "Pb_business_name"
-    t.string "P_street"
-    t.string "P_city"
-    t.string "P_state"
-    t.integer "P_zip"
-    t.integer "zz_pwsKey"
-    t.integer "zz_gIDTempInq"
-    t.string "IDInquiryArc"
-    t.string "StudentResidence"
-    t.integer "pa_four11_id"
-    t.integer "pb_four11_id"
-    t.date "Modification_date"
-    t.time "Modification_time"
-    t.string "Modifier_name"
-    t.boolean "approve_modification_to_four11"
-    t.boolean "approve_modification_to_portal"
-    t.integer "modified_in_four11_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "prenotes", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -1163,14 +958,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.string "topics"
   end
 
-  create_table "privnotes", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer "sid"
-    t.string "cc"
-    t.string "schoolid"
-    t.text "notes"
-    t.datetime "LastUpdate"
-  end
-
   create_table "progressreports", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer "section_id"
     t.integer "student_id"
@@ -1190,11 +977,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.index ["student_id"], name: "student_id"
     t.index ["term_id"], name: "term_id"
     t.index ["year_id"], name: "year_id"
-  end
-
-  create_table "question_groups", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "questions", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -1329,9 +1111,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.string "schgrade", limit: 2
   end
 
-  create_table "schoolhistories", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-  end
-
   create_table "seccomments", id: :integer, limit: 3, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci" do |t|
     t.integer "term_id", limit: 2
     t.integer "year_id", limit: 2
@@ -1386,18 +1165,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.index ["year_id"], name: "year_id_2"
   end
 
-  create_table "sections_teachers", primary_key: "oldid", id: :integer, limit: 3, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci" do |t|
-    t.integer "teacher_id", limit: 3, unsigned: true
-    t.integer "section_id", limit: 3, unsigned: true
-    t.integer "year_id", limit: 1
-    t.index ["section_id"], name: "section_id"
-    t.index ["section_id"], name: "section_id_2"
-    t.index ["teacher_id"], name: "teacher_id"
-    t.index ["teacher_id"], name: "teacher_id_2"
-    t.index ["year_id"], name: "year_id"
-    t.index ["year_id"], name: "year_id_2"
-  end
-
   create_table "sessions", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "session_id"
     t.text "data"
@@ -1410,6 +1177,22 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.string "value"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "signs", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "manufacturer"
+    t.string "model"
+    t.string "hostname"
+    t.string "name"
+    t.string "ip_addr"
+    t.string "mac_addr"
+    t.integer "location_id"
+    t.float "lat", limit: 24
+    t.float "long", limit: 24
+    t.string "image"
+    t.string "default_presentation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "simple_reports", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -1474,17 +1257,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.float "engagement", limit: 24
   end
 
-  create_table "students", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "students_individuals", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci" do |t|
-    t.integer "student_id", default: 0, null: false
-    t.integer "individual_id", default: 0, null: false
-    t.integer "relationship_id", default: 0, null: false
-  end
-
   create_table "submissions", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer "canvas_id"
     t.text "body"
@@ -1539,28 +1311,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean "election"
-  end
-
-  create_table "teacher_evaluations", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "applicantion_data_id"
-    t.string "lastname"
-    t.string "firstname"
-    t.string "title"
-    t.string "relationship"
-    t.string "how_long_have_you_known_the_applicant"
-    t.string "evaluation_body"
-    t.string "notes_on_evaluations"
-  end
-
-  create_table "teachers", id: :integer, limit: 3, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci" do |t|
-    t.string "sisid", limit: 8, collation: "latin1_swedish_ci"
-    t.string "lastname", limit: 50, collation: "latin1_swedish_ci"
-    t.string "firstname", limit: 50, collation: "latin1_swedish_ci"
-    t.string "gender", limit: 1, collation: "latin1_swedish_ci"
-    t.date "birthday"
-    t.string "degree", collation: "latin1_swedish_ci"
-    t.string "login", collation: "latin1_swedish_ci"
-    t.index ["login"], name: "login"
   end
 
   create_table "teaching_assignments", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci" do |t|
@@ -1644,13 +1394,6 @@ ActiveRecord::Schema.define(version: 20180130220437) do
     t.datetime "end_time"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "yeargrades", id: :integer, limit: 3, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci" do |t|
-    t.integer "student_id", limit: 3, unsigned: true
-    t.integer "year_id", limit: 1, unsigned: true
-    t.integer "grade_id", limit: 1, unsigned: true
-    t.string "subgrade", limit: 1, collation: "latin1_swedish_ci"
   end
 
   create_table "years", id: :integer, limit: 1, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci" do |t|
