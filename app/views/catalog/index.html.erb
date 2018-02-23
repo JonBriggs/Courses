@@ -67,25 +67,23 @@
 <script>
   
   function setActiveFilter(el, target){
-    var age = $(el).data(target);
+    var filter = $(el).data(target);
     $('nav#' + target + '-filter a').removeClass('mdc-tab--active');
-    $('nav#' + target + '-filter a[data-' + target + '="' + age + '"]').addClass('mdc-tab--active');
+    $('nav#' + target + '-filter a[data-' + target + '="' + filter + '"]').addClass('mdc-tab--active');
   }
 
   function filterTiles(dept,ages,duration){
-      console.log("Filters",dept,ages,duration);
+      //console.log("Filters",dept,ages,duration);
       filterCourseTiles(dept,ages,duration);
-
       updateCourseCount();
-
   };
 
   function filterCourseTiles(dept,ages,duration){
-    $('div.course-container').hide();
-    if (dept == 0) { //signal to only show requirement cards
+    $('div.course-container').hide(); //hide all to start
+    if (dept == 0) { //signal to only show department cards
       $('.course-container[data-card-type=department]').delay(10).fadeIn();
     }
-    else { 
+    else { //otherwise filter as normal
       $('div.course-container').filter(function(){
           return (dept == 'all' || $(this).data("dept") == dept) &&
                   (ages == 'all' || $(this).data('age') == 'a' || $(this).data('age') == ages) &&
@@ -100,9 +98,9 @@
       setTimeout("$('#course-count').html( courseCount('Course')).fadeIn(500);",500);
   }
 
-  function courseCount(appendText) {
-    var count = $('.course-container:visible').size() - $('.course-container:visible[data-card-type=department]').size()
-    appendText = appendText + (count != 1 ? 's' : '');
+  function courseCount(appendText) { //apend text allows us to change courses to classes etc.
+    var count = $('.course-container:visible').size() - $('.course-container:visible[data-card-type=department]').size() // don't count department cards
+    appendText = appendText + (count != 1 ? 's' : ''); //pluralize
     return count + " " + appendText;
   }
 
@@ -111,21 +109,14 @@
       $('nav#'+filter+'-filter a').on('click',function(){setActiveFilter(this, filter);});
     });
   }
-    $(document).ready(function() {
-        console.log("document ready");
+  $(document).ready(function() {
+        //console.log("document ready");
         buildFilters(["age","duration","dept"]);
-
         updateCourseCount();
-        $('nav a').on('click',function(){
-           <%# var dept = $(this).data('dept');
-           var age = $(this).data('age');
-           var duration = $(this).data('duration'); %>
-           
+        $('nav a').on('click',function(){ // listen for click events on filters
            filterTiles($("nav#dept-filter a.mdc-tab--active").data('dept'),
                         $("nav#age-filter a.mdc-tab--active").data('age'),
                         $("nav#duration-filter a.mdc-tab--active").data('duration'));
         });
-        
-
     });
 </script>
