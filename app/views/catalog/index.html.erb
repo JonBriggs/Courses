@@ -35,7 +35,7 @@
           <a class='mdc-tab dept-10' data-dept='10'>Tech</a>
           <a class='mdc-tab dept-8' data-dept='8'>Interdisciplinary</a>
           <a class='mdc-tab dept-11' data-dept='11'>Seminars</a>
-          <a class='mdc-tab dept-11' data-dept='11'>Req's.</a> <!-- *****  FOR REQ SORT  *****  -->
+          <a class='mdc-tab dept-0' data-dept='0'>Req's.</a> <!-- *****  FOR REQ SORT  *****  -->
           <span class="mdc-tab-bar__indicator"></span>
         </nav>
   <div id='course-filter-stats'>
@@ -74,24 +74,37 @@
 
   function filterTiles(dept,ages,duration){
       console.log("Filters",dept,ages,duration);
-      $('div.course-container').hide(); 
+      filterCourseTiles(dept,ages,duration);
+
+      updateCourseCount();
+
+  };
+
+  function filterCourseTiles(dept,ages,duration){
+    $('div.course-container').hide();
+    if (dept == 0) { //signal to only show requirement cards
+      $('.course-container[data-card-type=department]').delay(10).fadeIn();
+    }
+    else { 
       $('div.course-container').filter(function(){
           return (dept == 'all' || $(this).data("dept") == dept) &&
                   (ages == 'all' || $(this).data('age') == 'a' || $(this).data('age') == ages) &&
-                  (duration == 'all' || $(this).data('duration') == duration);
-      }).delay(10).fadeIn();
-      $('body').delay(10).animate( { scrollTop : 0 }, 350 );
+                  (duration == 'all' || $(this).data('age') == 'a' ||  $(this).data('duration') == duration);
+        }).delay(10).fadeIn();
+    }
+    $('body').delay(10).animate( { scrollTop : 0 }, 350 );
+  }
+
+  function updateCourseCount() {
       $('#course-count').fadeOut(500);
-      setTimeout("$('#course-count').html($('.course-container:visible').size() + ' Course' + ($('.course-container:visible').size() != 1 ? 's' : '')).fadeIn(500);",1000);
-      /*
-      if (dept == 0) {
-        $('ul#og-grid li').fadeIn();
-      } else {
-        $('ul#og-grid li').fadeOut();
-        $('li.dept-' + dept).delay(300).fadeIn();
-      }
-        */
-  };
+      setTimeout("$('#course-count').html( courseCount('Course')).fadeIn(500);",500);
+  }
+
+  function courseCount(appendText) {
+    var count = $('.course-container:visible').size() - $('.course-container:visible[data-card-type=department]').size()
+    appendText = appendText + (count != 1 ? 's' : '');
+    return count + " " + appendText;
+  }
 
   function buildFilters(ary){
     $.each(ary,function(ind,filter){
@@ -102,7 +115,7 @@
         console.log("document ready");
         buildFilters(["age","duration","dept"]);
 
-        $('#course-count').html($('.course-card:visible').size() + ' Courses');
+        updateCourseCount();
         $('nav a').on('click',function(){
            <%# var dept = $(this).data('dept');
            var age = $(this).data('age');
