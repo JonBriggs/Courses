@@ -1,3 +1,4 @@
+<%dept_card = !@course_offering.department_card_id.nil?%>
 <div class="mdc-card form-info-card">
   <section class="mdc-card__primary">
     <div style="padding: 0 10px;">
@@ -18,7 +19,7 @@
                 <% end %>
                 <div class="mdc-card form-card">
                   <section class="mdc-card__secondary">
-                    <h2>Edit Course</h2>
+                    <h2>Edit Course Offering</h2>
                     <div class="mdc-layout-grid" style="margin:0px; padding:0px;">
                       <div class="mdc-layout-grid__inner">
                         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
@@ -55,7 +56,7 @@
                     </div>
                     <br>
                     <div class="actions" style="text-align:right;">
-                      <%= f.file_field :passed_course_img, class: "mdc-button mdc-button--raised mdc-button--compact" %>
+                      <%= f.file_field :passed_course_img, class: "mdc-button mdc-button--raised mdc-button--compact" unless dept_card%>
                       <%= f.submit class: "mdc-button mdc-button--raised mdc-button--compact"%>
                     </div>
                   </section>
@@ -83,7 +84,7 @@
                       </div>
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">
                         <h2>Image Preview</h2>
-                        <%= image_tag @course_offering.course.course_image.url(:preview)%>
+                        <%= image_tag @course_offering.course.course_image.url(:preview) unless dept_card%>
                       </div>
                     </div>
                   </div>
@@ -119,7 +120,7 @@
   }
 
   $(document).ready(function(){
-                  $('#preview-card').html("<%=escape_javascript(render partial: "catalog/course_card", locals: {course: @course_offering.course, course_offering: @course_offering, adl_class: "mdc-dialog--open render-dialog-inline"})%>")
+                  $('#preview-card').html("<%=escape_javascript(render partial: (dept_card ? "catalog/department_card" : "catalog/course_card"), locals: {department: Department.find(@course_offering.department_card_id),  department_card: @course_offering, course: @course_offering.course, course_offering: @course_offering, adl_class: "mdc-dialog--open render-dialog-inline"})%>")
                   $('#course_offering_description').on('keyup',function(){descriptionChange(this);});
                   $('#course_offering_info').on('keyup',function(){infoChange(this);});
                   $('#course_offering_gradelevels').on('keyup',function(){gradelevelsChange(this);});

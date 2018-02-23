@@ -11,7 +11,7 @@ class CourseOfferingsController < ApplicationController
 
   def index
     set_working_year
-    @course_offerings = CourseOffering.joins(:course).where("year_id = ?",@year).order('courses.department_id,sort_order').all
+    @course_offerings = CourseOffering.left_outer_joins(:course).where("year_id = ?",@year).order('courses.department_id,sort_order').all
   end
 
   # GET /course_offerings/1
