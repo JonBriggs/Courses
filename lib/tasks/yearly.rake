@@ -31,6 +31,20 @@ namespace :annual_import do
         co.save
       end
     end
+
+    # Roll forward the discipline cards
+    CourseOffering.where("department_card_id > 0 and year_id = ?",this_year).all.each do |discipline_card|
+      unless CourseOffering.where("department_card_id = ? and year_id = ?", discipline_card.department_card_id, next_year).first
+        co = CourseOffering.new
+        co.department_card_id = discipline_card.department_card_id
+        co.year_id = next_year
+        co.sort_order = discipline_card.sort_order
+        co.info = discipline_card.info
+        co.gradelevels = discipline_card.gradelevels
+        co.description = discipline_card.description
+        co.save
+      end
+    end
   end
 
 
