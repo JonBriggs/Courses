@@ -1,3 +1,4 @@
+<%dept_card = !@course_offering.department_card_id.nil?%>
 <div class="mdc-card edit-title-card">
   <section class="mdc-card__primary">
     <div style="padding: 0 10px;">
@@ -17,6 +18,10 @@
 
 <div class="mdc-layout-grid"><!--<div id='course-catalog'>-->
   <div class="mdc-layout-grid__inner">
-    <%= render partial: "courses/course", locals: {course: @course_offering.course }%>
+    <% if dept_card %>
+      <%= render partial: "catalog/department", locals: {department: Department.find(@course_offering.department_card_id), department_card: @course_offering }%>
+    <% else %>
+      <%= render partial: "courses/course", locals: {course: @course_offering.course }%>
+    <% end %>
   </div>
 </div>
