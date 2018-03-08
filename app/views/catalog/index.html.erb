@@ -19,6 +19,7 @@
           <a data-duration="all" class="mdc-tab mdc-tab--active duration-all">All Lengths</a>
           <a class='mdc-tab duration-T' data-duration='T'>Trimester</a>
           <a class='mdc-tab duration-Y' data-duration='Y'>Year</a>
+          <a class='mdc-tab dept-0' data-dept='0'><strong><em>Requirements</em></strong></a> <!-- *****  FOR REQ SORT  *****  -->
           <%#<a class='mdc-tab duration-S' data-duration='S'>Seminar</a>
           %>
         </nav>
@@ -36,7 +37,6 @@
           <a class='mdc-tab dept-10' data-dept='10'>Tech</a>
           <a class='mdc-tab dept-8' data-dept='8'>Interdisciplinary</a>
           <a class='mdc-tab dept-11' data-dept='11'>Seminars</a>
-          <a class='mdc-tab dept-0' data-dept='0'>Req's</a> <!-- *****  FOR REQ SORT  *****  -->
           <span class="mdc-tab-bar__indicator"></span>
         </nav>
   <div id='course-filter-stats'>
@@ -51,6 +51,9 @@
 <div class="mdc-layout-grid"><!--<div id='course-catalog'>-->
   <div class="mdc-layout-grid__inner">
   <% current_dept_id = 0 %>
+  <% @info_departments.each do |dept_id| %>
+    <%=department_card_for(dept_id) %>
+  <% end  %>
 	<% @courses.each do |course| %>
       <% if course.department_id != current_dept_id %>
         <%=department_card_for(course.department_id)%>
