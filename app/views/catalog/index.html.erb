@@ -13,13 +13,13 @@
           <a data-age='all' class="mdc-tab mdc-tab--active age-all">5<sup>th</sup>-12<sup>th</sup></a>
           <a class='mdc-tab age-ms' data-age='ms'>Middle School</a>
           <a class='mdc-tab age-us' data-age='us'>Upper School</a>
+          <a class='mdc-tab dept-0' data-age='req' data-dept='0'>Requirements</a> <!-- *****  FOR REQ SORT  *****  -->
         </nav>
         <nav id="duration-filter" class="mdc-tab-bar courses-bar"><!--  ******  NEED TO ACCOUNT FOR id="duration-filter   ***** -->
           <span class='mdc-typography--headline'>Duration</span>
           <a data-duration="all" class="mdc-tab mdc-tab--active duration-all">All Lengths</a>
           <a class='mdc-tab duration-T' data-duration='T'>Trimester</a>
           <a class='mdc-tab duration-Y' data-duration='Y'>Year</a>
-          <a class='mdc-tab dept-0' data-dept='0'><strong><em>Requirements</em></strong></a> <!-- *****  FOR REQ SORT  *****  -->
           <%#<a class='mdc-tab duration-S' data-duration='S'>Seminar</a>
           %>
         </nav>
@@ -84,7 +84,8 @@
 
   function filterCourseTiles(dept,ages,duration){
     $('div.course-container').hide(); //hide all to start
-    if (dept == 0) { //signal to only show department cards
+    console.log(dept,ages,duration);
+    if (ages == "req") { //signal to only show department cards
       $('.course-container[data-card-type=department]').delay(10).fadeIn();
     }
     else { //otherwise filter as normal
