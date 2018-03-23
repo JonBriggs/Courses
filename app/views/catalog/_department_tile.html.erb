@@ -1,14 +1,12 @@
-<div class="mdc-card mdc-card__media">
+<div class="mdc-card mdc-card__media" style="background: url(<%=asset_path 'courses--info-card.jpg'%>)">
   <section class="mdc-card__actions">
     <div class="mdc-layout-grid dep-term-grid">
       <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3"><span class="dep-img" style="color: #eeb111 !important; letter-spacing:.5px;"><%=department.name%></span></div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9" style="text-align:right;"><% # render partial: "catalog/course_stats", locals: {course: course, course_offering: course.current_course_offering, short: true}
-         %></div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12"><h2 style="color: #eeb111 !important; letter-spacing:.5px; margin:0px; font-weight:normal;"><%=department.name%></h2></div>
       </div>
     </div>
   </section>
   <section class="mdc-card__primary">
-    <h2 class="mdc-card__title mdc-card__title--large"><%=department_card.info.split("|").join("<br>").html_safe%></h2>
+    <h2 class="mdc-card__title mdc-card__title--large">Philosophy &amp; Requirements</h2>
   </section>
 </div>

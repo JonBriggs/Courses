@@ -120,7 +120,7 @@
   }
 
   $(document).ready(function(){
-                  $('#preview-card').html("<%=escape_javascript(render partial: (dept_card ? "catalog/department_card" : "catalog/course_card"), locals: {department: Department.find(@course_offering.department_card_id),  department_card: @course_offering, course: @course_offering.course, course_offering: @course_offering, adl_class: "mdc-dialog--open render-dialog-inline"})%>")
+                  $('#preview-card').html("<%=escape_javascript(render partial: (dept_card ? "catalog/department_card" : "catalog/course_card"), locals: {department: Department.find(@course_offering.try(:course).try(:department_id) || @course_offering.department_card_id),  department_card: @course_offering, course: @course_offering.course, course_offering: @course_offering, adl_class: "mdc-dialog--open render-dialog-inline"})%>")
                   $('#course_offering_description').on('keyup',function(){descriptionChange(this);});
                   $('#course_offering_info').on('keyup',function(){infoChange(this);});
                   $('#course_offering_gradelevels').on('keyup',function(){gradelevelsChange(this);});
