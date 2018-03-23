@@ -86,7 +86,7 @@
     else { //otherwise filter as normal
       $('div.course-container').filter(function(){
           return (dept == 'all' || $(this).data("dept") == dept) &&
-                  (ages == 'all' || $(this).data('age') == 'a' || $(this).data('age') == ages) &&
+                  (ages == 'all' || $(this).data('age') == 'all' || $(this).data('age') == 'a' || $(this).data('age') == ages) &&
                   (duration == 'all' || $(this).data('age') == 'a' ||  $(this).data('duration') == duration);
         }).delay(10).fadeIn();
     }
