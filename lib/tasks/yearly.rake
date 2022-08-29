@@ -61,6 +61,47 @@ namespace :annual_import do
     end
   end
 
+  desc "Add in new courses for this year"
+  task(:check_for_newly_catalogged_courses => :environment) do
+    courses = Course.where("catalog = 1")
+    puts "Which year id are we working with? Current year is #{Courses::Application.config.catalog_year}"
+
+    year_id = STDIN.gets().chomp.to_i
+
+    courses.each do |course|
+      puts course.name
+      unless CourseOffering.where("course_id = ? and year_id = ?",course.id,year_id).first
+        puts "Missing course offering for #{course.inspect}, \n Create course offering? y/N"
+        choice = STDIN.gets.chomp.downcase
+        if choice == 'y'
+          co = CourseOffering.new
+          co.course_id = course.id
+          co.year_id = year_id
+          last_course_offering = CourseOffering.where("course_id = ? and year_id = ?",course.id,year_id - 1).first
+          if last_course_offering
+            #co.grade_level_ids = last_course_offering.grade_level_ids
+            co.description = last_course_offering.description
+            co.grade_level_ids = last_course_offering.grade_level_ids
+            co.gradelevels = last_course_offering.gradelevels
+            co.info = last_course_offering.info
+            co.sort_order = last_course_offering.sort_order
+            co.gradelevels = last_course_offering.gradelevels
+          elsif course.cat_entry
+            co.sort_order = 20 
+            co.info = "" 
+            co.description = course.cat_entry
+            co.gradelevels = course.gradelevels
+          else
+            co.sort_order = 20 
+            co.info = ""
+            co.description = course.description
+            co.gradelevels = course.gradelevels
+          end
+          co.save
+        end
+      end
+    end
+  end
 
   desc "Load course information"
   task(:old_load_course_information => :environment) do
