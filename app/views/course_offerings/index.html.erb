@@ -1,7 +1,14 @@
 <div class="mdc-card edit-title-card">
   <section class="mdc-card__primary">
     <div style="padding: 0 10px;">
-      <h1 class="mdc-card__title mdc-card__title--large">Course Listings for <%=@course_offerings[0].year.name%></h1>
+      <h1 class="mdc-card__title mdc-card__title--large">
+        Course Listings for <%=@course_offerings[0].year.name%> 
+        <%=link_to "Publish", {:action => "republish", :controller => "application"}, :id => "repub", :onclick => "$('#repub').hide();$('#republishing').fadeIn(2000).fadeOut(1000).fadeIn(3000);", :method => :post%> 
+        <span id='republishing' style='display:none;'>Republishing</span>
+        <% flash.each do |key, value| %>
+           <span class="alert alert-<%= key %>"><%= value %></span>
+         <% end %>
+       </h1>
     </div>
   </section>
 </div>
@@ -13,6 +20,7 @@
           <table class="mdl-data-table" style="margin:0 auto;">
             <thead>
               <tr>
+                <th>Displayed?</th>
                 <th>Image</th>
                 <th>Department</th>
                 <th>Course</th>
@@ -31,6 +39,7 @@
                 <% warning = course_offering.description == nil || course_offering.description.size < 200 || course_offering.gradelevels.nil? || course_offering.gradelevels.size < 1 %>
                 <% dept_card = !course_offering.department_card_id.nil?%>
                 <tr<%= warning ? " class=warning" : "" %>>
+                  <td><%= course_offering.additional_offering? ? "additional offering" : "DISPLAYED"%></td>
                   <td><%= image_tag course_offering.course.course_image.url(:thumb) unless dept_card%></td>
                   <td><%= warning ? "!!!" : ""%>
                     <%=(course_offering.course.department ? course_offering.course.department.name : course_offering.course.department_id) unless dept_card%>

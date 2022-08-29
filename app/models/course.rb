@@ -8,6 +8,18 @@ class Course < ApplicationRecord
   def current_course_offering
     course_offerings.where("year_id = ?",Courses::Application.config.catalog_year).first
   end
+  
+  def sibling_course_ids
+    if self.siblings
+      self.siblings.split(",").map {|c| c.to_i}
+    else
+      [] 
+    end
+  end
+
+  def sibling_courses
+    Course.where("id in (?)", self.sibling_course_ids).all
+  end
 
   def fitted_name
     if name.size > 41

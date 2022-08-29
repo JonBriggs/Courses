@@ -1,6 +1,6 @@
 namespace :courses do
   desc "Move Course.eastsideprep.org into the new year"
-  task(:setup_course_offerings => :environment) do
+  task(:old_setup_course_offerings => :environment) do
     puts "Have you already used wget to archive this year's offerings?"
     puts "have you setup nginx to serve that archive at courses.eastsideprep.org while you work on these?"
     puts "have you set the courses application to be at courses16.eastsideprep.org"

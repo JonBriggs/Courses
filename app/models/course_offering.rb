@@ -7,6 +7,27 @@ class CourseOffering < ApplicationRecord
     self.course.save
   end
 
+  def sibling_offerings
+    CourseOffering.where("year_id = ? and course_id in (?)", self.year_id, self.course.sibling_course_ids).all
+  end
+
+  def add_sibling_offering(term_id)
+    if self.course.term_id != term_id
+      new_course_id = self.course.sibling_courses.where("courses.term_id = ?", term_id).first.id
+      if new_course_id && CourseOffering.where("course_id = ? and year_id = ?", new_course_id, self.year_id).first.nil?
+        co = self.dup
+        co.course_id = new_course_id
+        co.additional_offering = true
+        co.save
+        puts "Course offering added"
+      else
+        puts "Already added that term or no courses available to add that term"
+      end
+    else
+      puts "ERROR, courses is in the same term"
+    end
+  end
+  
   def age_level
     if gradelevels == nil || gradelevels == '' || gradelevels.size == 0
       return "all"

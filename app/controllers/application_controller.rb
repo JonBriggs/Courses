@@ -7,4 +7,10 @@ class ApplicationController < ActionController::Base
     #@year ||= Year.where("current = 1") #Year.next_year or 
     @year = Year.find Courses::Application.config.catalog_year #Year.next_year
   end
+
+  def republish
+    %x(/var/www/org.eastsideprep.courses/publish.sh)
+    flash[:notice] = "Courses.eastsideprep.org Republished"
+    redirect_to course_offerings_path
+  end
 end

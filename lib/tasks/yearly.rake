@@ -6,6 +6,16 @@ namespace :annual_import do
     year = STDIN.gets.chomp.to_i
 	this_year = Year.find(year - 1)
 	next_year = Year.find(year)
+    #move forward discipline cards
+    discipline_cards = CourseOffering.where("department_card_id is not null and year_id = ?",this_year).all
+    discipline_cards.each do |dc|
+      if CourseOffering.where("department_card_id = ? and year_id = ?",dc.department_card_id, next_year.id).first == nil
+        new_dc = dc.dup
+        new_dc.year_id = next_year.id
+        new_dc.save
+      end
+    end
+    #include courses marked as catalog
     courses.each do |course|
       puts course.name
       unless CourseOffering.where("course_id = ? and year_id = ?",course.id,next_year.id).first
@@ -22,9 +32,13 @@ namespace :annual_import do
           co.sort_order = last_course_offering.sort_order
           co.gradelevels = last_course_offering.gradelevels
         elsif course.cat_entry
+          co.sort_order = 20 
+          co.info = "" 
           co.description = course.cat_entry
           co.gradelevels = course.gradelevels
         else
+          co.sort_order = 20 
+          co.info = ""
           co.description = course.description
           co.gradelevels = course.gradelevels
         end
@@ -49,7 +63,7 @@ namespace :annual_import do
 
 
   desc "Load course information"
-  task(:load_course_information => :environment) do
+  task(:old_load_course_information => :environment) do
     require 'csv'
     begin
       csv_courses = CSV.read('2014-course-catalog.csv')
