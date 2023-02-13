@@ -51,14 +51,29 @@ namespace :annual_import do
       unless CourseOffering.where("department_card_id = ? and year_id = ?", discipline_card.department_card_id, next_year).first
         co = CourseOffering.new
         co.department_card_id = discipline_card.department_card_id
-        co.year_id = next_year
+        co.year_id = next_year.id
         co.sort_order = discipline_card.sort_order
         co.info = discipline_card.info
         co.gradelevels = discipline_card.gradelevels
         co.description = discipline_card.description
-        co.save
+        co.save!
       end
     end
+    #account for offerings not in the catalog (5/6 sports in-day)
+    CourseOffering.where("additional_offering = 1 and year_id = ?",this_year).all.each do |adl_offering|
+      unless CourseOffering.where("course_id = ? and year_id = ?",adl_offering.course_id, next_year).first
+        puts "additional_offering #{adl_offering.course.name} #{this_year} -> #{next_year}"
+        co = CourseOffering.new
+        co.course_id = adl_offering.course_id
+        co.year_id = next_year.id
+        co.sort_order = adl_offering.sort_order
+        co.info = adl_offering.info
+        co.gradelevels = adl_offering.gradelevels
+        co.description = adl_offering.description
+        co.additional_offering = adl_offering.additional_offering 
+        puts co.save!
+      end
+    end    
   end
 
   desc "Add in new courses for this year"
