@@ -20,10 +20,10 @@ class CatalogController < ApplicationController
     elsif params[:term_id]
       year = params[:year_id]
       term = params[:term_id]
-      courses = Course.where("offering = 1 and (archived != 1 or archived is null) and term_id = ? and division_id != 11",term).all
+      courses = Course.where("offering = 1 and (archived != 1 or archived is null) and term_id = ?",term).all #now includes seminars in api
     else
       year = params[:year_id]
-      courses = Course.where("(archived != 1 or archived is null) and catalog=1 and division_id != 11").all
+      courses = Course.where("(archived != 1 or archived is null) and catalog=1").all #now includes seminars in api
     end
 
     @course_offerings = []
