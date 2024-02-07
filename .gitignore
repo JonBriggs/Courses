@@ -18,6 +18,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-/public/assets
-/public/system
+#/public/assets
+#/public/system
 /.vscode
