@@ -9,11 +9,48 @@ threads threads_count, threads_count
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
-port        ENV.fetch("PORT") { 3000 }
+#port        ENV.fetch("PORT") { 3000 }
 
 # Specifies the `environment` that Puma will run in.
 #
-environment ENV.fetch("RAILS_ENV") { "development" }
+#environment ENV.fetch("RAILS_ENV") { "production" }
+
+
+
+app_dir = File.expand_path("../..", __FILE__)
+shared_dir = "#{app_dir}/../shared"
+#
+# # Default to production
+rails_env = ENV['RAILS_ENV'] || "production"
+environment rails_env
+
+if rails_env == "production"
+# # Set up socket location
+   workers 2
+   bind "unix://#{shared_dir}/sockets/puma.sock"
+else
+   workers 0
+   port ENV.fetch("PORT") { 3000 }
+end
+#
+# # Logging
+ stdout_redirect "#{shared_dir}/log/puma.stdout.log", "#{shared_dir}/log/puma.stderr.log", true
+#
+# # Set master PID and state locations
+ pidfile "#{shared_dir}/pids/puma.pid"
+ state_path "#{shared_dir}/pids/puma.state"
+ activate_control_app
+#
+ on_worker_boot do
+   require "active_record"
+   require 'erb'
+   ActiveRecord::Base.connection.disconnect! rescue ActiveRecord::ConnectionNotEstablished
+      ActiveRecord::Base.establish_connection( YAML.load( ERB.new( File.read( "#{app_dir}/config/database.yml" )).result)[rails_env])
+      # ActiveRecord::Base.establish_connection(YAML.load_file("#{app_dir}/config/database.yml")[rails_env])
+  end
+# Allow puma to be restarted by `rails restart` command.
+plugin :tmp_restart
+
 
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together
@@ -52,5 +89,3 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # end
 #
 
-# Allow puma to be restarted by `rails restart` command.
-plugin :tmp_restart

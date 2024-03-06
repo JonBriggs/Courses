@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-#rubyr= '2.4.1'
+rubyr= '2.7.1'
 #ruby-gemset='org-eastsideprep-courses'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.1.4'
@@ -45,7 +45,9 @@ end
 
 # Use unicorn as the app server
 #COMMENT OUT unicorn for Windows development
-gem 'unicorn'
+#gem 'unicorn'
+# Use Puma as the app server
+gem 'puma', '>= 6.3.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
